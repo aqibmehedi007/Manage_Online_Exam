@@ -125,6 +125,31 @@ export default function LoginPage() {
               </div>
             </form>
           </div>
+          
+          {/* Subtle Demo Buttons Below the Card */}
+          <div className="flex gap-6 mt-[-10px]">
+            <button 
+              type="button"
+              onClick={() => { setEmail('superadmin@akij.work'); setPassword('password123'); }}
+              className="px-4 py-2 text-sm font-semibold text-gray-500 border border-gray-200 rounded-lg bg-white/50 hover:bg-white hover:text-primary transition-all hover:border-primary/30"
+            >
+              Demo Admin
+            </button>
+            <button 
+              type="button"
+              onClick={() => { setEmail('employer@akij.work'); setPassword('password123'); }}
+              className="px-4 py-2 text-sm font-semibold text-gray-500 border border-gray-200 rounded-lg bg-white/50 hover:bg-white hover:text-primary transition-all hover:border-primary/30"
+            >
+              Demo Employer
+            </button>
+            <button 
+              type="button"
+              onClick={() => { setEmail('fahim.patwary.789@dhakabank.com.bd'); setPassword('password123'); }}
+              className="px-4 py-2 text-sm font-semibold text-gray-500 border border-gray-200 rounded-lg bg-white/50 hover:bg-white hover:text-primary transition-all hover:border-primary/30"
+            >
+              Demo Candidate
+            </button>
+          </div>
         </div>
         
         <Footer />
