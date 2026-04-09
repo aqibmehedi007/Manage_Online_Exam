@@ -53,7 +53,7 @@ export default function LoginPage() {
       <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8 shadow-sm">
         <div className="flex w-full items-center justify-between mx-auto max-w-[1440px]">
           <div className="relative h-9 w-32">
-            <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain object-left" />
+            <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
           </div>
           <h1 className="text-xl font-bold text-[#1e293b]">Akij Resource</h1>
           <div className="w-36"></div> {/* Spacer for symmetry */}

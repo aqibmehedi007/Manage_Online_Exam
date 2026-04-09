@@ -15,7 +15,7 @@ interface ExamQuestion {
 function NavLogo() {
   return (
     <div className="relative h-9 w-32 shrink-0">
-      <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain object-left" />
+      <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
     </div>
   );
 }

@@ -46,7 +46,7 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
               className="relative h-9 w-32 cursor-pointer shrink-0"
               onClick={() => (window.location.href = '/')}
             >
-              <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain object-left" />
+              <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
             </div>
             <span className="text-sm font-medium text-[#475569]">{pageTitle}</span>
           </div>

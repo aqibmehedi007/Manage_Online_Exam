@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <span className="text-sm text-gray-400">Powered by</span>
           <div className="relative h-7 w-28">
-            <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain brightness-0 invert" />
+            <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain brightness-0 invert" />
           </div>
         </div>
 
