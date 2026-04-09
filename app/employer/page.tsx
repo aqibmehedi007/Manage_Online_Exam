@@ -10,6 +10,8 @@ export default function EmployerDashboard() {
   const [exams, setExams] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
 
   useEffect(() => {
     async function fetchExams() {
@@ -30,6 +32,20 @@ export default function EmployerDashboard() {
     exam.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Pagination Logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredExams.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredExams.length / itemsPerPage);
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
     <div className="mx-auto max-w-[1280px] space-y-8">
       {/* Header: Title + Search + Create */}
@@ -42,7 +58,10 @@ export default function EmployerDashboard() {
               type="text"
               placeholder="Search by exam title"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setCurrentPage(1); // Reset to first page on search
+              }}
               className="w-full h-12 pl-5 pr-12 bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"
             />
             <button className="absolute right-3 text-primary">
@@ -65,9 +84,9 @@ export default function EmployerDashboard() {
             <div key={i} className="h-48 animate-pulse rounded-xl bg-gray-100 border border-gray-200"></div>
           ))}
         </div>
-      ) : filteredExams.length > 0 ? (
+      ) : currentItems.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {filteredExams.map((exam) => (
+          {currentItems.map((exam) => (
             <ExamCard
               key={exam.id}
               id={exam.id}
@@ -99,22 +118,48 @@ export default function EmployerDashboard() {
       {filteredExams.length > 0 && (
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center gap-2">
-            <button className="h-8 w-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:text-primary hover:border-primary transition-colors">
+            <button 
+              onClick={handlePrev}
+              disabled={currentPage === 1}
+              className={`h-8 w-8 flex items-center justify-center rounded border border-gray-200 transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'text-gray-400 hover:text-primary hover:border-primary'}`}
+            >
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <div className="h-8 w-8 flex items-center justify-center rounded border border-gray-200 text-sm font-medium text-[#1e293b]">
-              1
+            <div className="h-8 w-8 flex items-center justify-center rounded border border-primary bg-primary/5 text-sm font-bold text-primary">
+              {currentPage}
             </div>
-            <button className="h-8 w-8 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:text-primary hover:border-primary transition-colors">
+            <button 
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className={`h-8 w-8 flex items-center justify-center rounded border border-gray-200 transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'text-gray-400 hover:text-primary hover:border-primary'}`}
+            >
               <ChevronRight className="h-4 w-4" />
             </button>
+            <span className="text-sm text-gray-400 ml-2">Page {currentPage} of {totalPages}</span>
           </div>
 
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-500">Online Test Per Page</span>
-            <div className="flex items-center gap-1 px-3 py-1.5 border border-gray-200 rounded text-sm font-medium text-[#1e293b] cursor-pointer hover:border-primary transition-colors">
-              <span>8</span>
-              <ChevronDown className="h-3 w-3 text-gray-400" />
+            <div className="relative group">
+              <div className="flex items-center gap-1 px-3 py-1.5 border border-gray-200 rounded text-sm font-medium text-[#1e293b] cursor-pointer hover:border-primary transition-colors bg-white">
+                <span>{itemsPerPage}</span>
+                <ChevronDown className="h-3 w-3 text-gray-400" />
+              </div>
+              
+              <div className="absolute bottom-full mb-1 right-0 hidden group-hover:block w-20 bg-white border border-gray-100 rounded-lg shadow-xl py-1 z-10 overflow-hidden">
+                {[4, 8, 12, 20].map((num) => (
+                  <button
+                    key={num}
+                    onClick={() => {
+                        setItemsPerPage(num);
+                        setCurrentPage(1);
+                    }}
+                    className={`block w-full text-left px-4 py-2 text-xs font-bold hover:bg-gray-50 ${itemsPerPage === num ? 'text-primary bg-primary/5' : 'text-gray-500'}`}
+                  >
+                    {num}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
