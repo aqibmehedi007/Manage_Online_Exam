@@ -112,6 +112,15 @@ export default function LoginPage() {
               >
                 Submit
               </Button>
+
+              <div className="text-center">
+                <p className="text-sm text-gray-500">
+                  Don't have an account?{' '}
+                  <Link href="/auth/register" className="font-bold text-primary hover:underline">
+                    Create an account
+                  </Link>
+                </p>
+              </div>
             </form>
           </div>
         </div>

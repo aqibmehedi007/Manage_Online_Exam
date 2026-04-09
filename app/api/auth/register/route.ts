@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import prisma from '@/lib/prisma';
-import { login } from '@/lib/auth';
+import { login as setSession } from '@/lib/auth';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, password, role } = body;
+    const { name, email, password } = body;
 
-    if (!email || !password || !role) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
+    if (!name || !email || !password) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     const existingUser = await prisma.user.findUnique({
@@ -24,13 +24,15 @@ export async function POST(request: Request) {
 
     const user = await prisma.user.create({
       data: {
+        name,
         email,
         password: hashedPassword,
-        role: role.toUpperCase(),
+        role: 'CANDIDATE', // Default role for new registrations
       },
     });
 
-    await login({ id: user.id, email: user.email, role: user.role });
+    // Automatically log the user in after registration
+    await setSession({ id: user.id, email: user.email, role: user.role });
 
     return NextResponse.json({ 
       id: user.id, 

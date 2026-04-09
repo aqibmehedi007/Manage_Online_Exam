@@ -8,10 +8,21 @@ import { useRouter } from 'next/navigation';
 interface NavbarProps {
   userEmail?: string;
   userName?: string;
+  userImage?: string | null;
   pageTitle?: string;
 }
 
-export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }: NavbarProps) {
+import { usePathname } from 'next/navigation';
+
+export default function Navbar({ userEmail, userName, userImage, pageTitle }: NavbarProps) {
+  const pathname = usePathname();
+  
+  // Logic to determine title if not provided
+  const resolvedTitle = pageTitle || (
+    pathname?.includes('/create-test') ? 'Manage Online Test' :
+    pathname?.includes('/exam/') ? 'Dhaka Bank' : 
+    'Dashboard'
+  );
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -48,7 +59,7 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
             >
               <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
             </div>
-            <span className="text-sm font-medium text-[#475569]">{pageTitle}</span>
+            <span className="text-sm font-medium text-[#475569]">{resolvedTitle}</span>
           </div>
 
           {/* Right: Avatar + Name + Dropdown */}
@@ -57,8 +68,8 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center gap-3 cursor-pointer group"
             >
-              <div className="relative h-9 w-9 overflow-hidden rounded-full bg-gray-200">
-                <Image src="/avatar.png" alt="Profile" fill className="object-cover" />
+              <div className="relative h-9 w-9 overflow-hidden rounded-full bg-gray-100 border border-gray-100">
+                <Image src={userImage || "/avatar.png"} alt="Profile" fill className="object-cover" />
               </div>
               <div className="hidden xl:block text-right">
                 <div className="flex items-center gap-1.5">

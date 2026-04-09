@@ -5,12 +5,16 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import Link from 'next/link';
+import Image from 'next/image';
+import Footer from '@/components/Footer';
+import { Eye, EyeOff } from 'lucide-react';
 
 export default function RegisterPage() {
   const router = useRouter();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState<'CANDIDATE' | 'EMPLOYER'>('CANDIDATE');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -23,7 +27,7 @@ export default function RegisterPage() {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, role }),
+        body: JSON.stringify({ name, email, password }),
       });
 
       const data = await res.json();
@@ -32,12 +36,8 @@ export default function RegisterPage() {
         throw new Error(data.error || 'Registration failed');
       }
 
-      // Redirect based on role
-      if (data.role === 'EMPLOYER') {
-        router.push('/employer');
-      } else {
-        router.push('/candidate');
-      }
+      // Automatically redirects to candidate dashboard after registration
+      router.push('/candidate');
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -46,75 +46,89 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md space-y-8 rounded-xl bg-card p-8 card-shadow border border-border">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-primary">AKIJ Resource</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Create a new account</p>
-        </div>
-
-        <form className="mt-8 space-y-6" onSubmit={handleRegister}>
-          <div className="space-y-4">
-            <Input
-              label="Email"
-              type="email"
-              placeholder="name@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <Input
-              label="Password"
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            
-            <div className="space-y-2">
-              <label className="text-sm font-medium leading-none">Register as</label>
-              <div className="grid grid-cols-2 gap-4">
-                <button
-                  type="button"
-                  onClick={() => setRole('CANDIDATE')}
-                  className={`flex h-10 items-center justify-center rounded-md border px-3 py-2 text-sm font-medium transition-colors ${
-                    role === 'CANDIDATE' 
-                    ? 'bg-primary text-primary-foreground border-primary' 
-                    : 'bg-background hover:bg-muted'
-                  }`}
-                >
-                  Candidate
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRole('EMPLOYER')}
-                  className={`flex h-10 items-center justify-center rounded-md border px-3 py-2 text-sm font-medium transition-colors ${
-                    role === 'EMPLOYER' 
-                    ? 'bg-primary text-primary-foreground border-primary' 
-                    : 'bg-background hover:bg-muted'
-                  }`}
-                >
-                  Employer
-                </button>
-              </div>
-            </div>
+    <div className="flex flex-col min-h-screen bg-[#f8fafc]">
+      {/* Auth Navbar */}
+      <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8 shadow-sm">
+        <div className="flex w-full items-center justify-between mx-auto max-w-[1440px]">
+          <div className="relative h-9 w-32 cursor-pointer" onClick={() => router.push('/')}>
+            <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
           </div>
-
-          {error && <p className="text-sm text-destructive">{error}</p>}
-
-          <Button type="submit" className="w-full" isLoading={loading}>
-            Create Account
-          </Button>
-        </form>
-
-        <div className="text-center text-sm">
-          <span className="text-muted-foreground">Already have an account? </span>
-          <Link href="/auth/login" className="font-semibold text-primary hover:underline">
-            Sign In here
-          </Link>
+          <h1 className="text-xl font-bold text-[#1e293b]">Create Account</h1>
+          <div className="w-32"></div> {/* Spacer for symmetry */}
         </div>
-      </div>
+      </nav>
+
+      <main className="flex-1 flex flex-col pt-12">
+        <div className="flex-1 flex flex-col items-center p-4">
+          <h2 className="text-2xl font-bold text-[#1e293b] mb-8">Register</h2>
+          
+          <div className="w-full max-w-lg bg-white rounded-2xl p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 mb-12">
+            <form className="space-y-6" onSubmit={handleRegister}>
+              <div className="space-y-5">
+                <Input
+                  label="Full Name"
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="h-12 border-gray-200 focus:border-primary rounded-xl"
+                  required
+                />
+
+                <Input
+                  label="Email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-12 border-gray-200 focus:border-primary rounded-xl"
+                  required
+                />
+                
+                <div className="relative">
+                  <Input
+                    label="Password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Create a password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="h-12 border-gray-200 focus:border-primary rounded-xl"
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-[38px] text-gray-400 hover:text-gray-600"
+                  >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </button>
+                </div>
+              </div>
+
+              {error && <p className="text-sm text-destructive font-medium">{error}</p>}
+
+              <Button 
+                type="submit" 
+                className="w-full h-14 rounded-xl text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20" 
+                isLoading={loading}
+              >
+                Submit
+              </Button>
+
+              <div className="text-center">
+                <p className="text-sm text-gray-500">
+                  Already have an account?{' '}
+                  <Link href="/auth/login" className="font-bold text-primary hover:underline">
+                    Sign In
+                  </Link>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <Footer />
+      </main>
     </div>
   );
 }
