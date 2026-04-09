@@ -19,6 +19,7 @@ enum QuestionType {
 }
 
 enum SubmissionStatus {
+  ASSIGNED
   PENDING
   IN_PROGRESS
   COMPLETED

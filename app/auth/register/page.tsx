@@ -14,12 +14,31 @@ export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [image, setImage] = useState<string | null>(null);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
     setLoading(true);
     setError('');
 
@@ -27,7 +46,7 @@ export default function RegisterPage() {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, image }),
       });
 
       const data = await res.json();
@@ -58,12 +77,33 @@ export default function RegisterPage() {
         </div>
       </nav>
 
-      <main className="flex-1 flex flex-col pt-12">
+      <main className="flex-1 flex flex-col pt-12 pb-20">
         <div className="flex-1 flex flex-col items-center p-4">
           <h2 className="text-2xl font-bold text-[#1e293b] mb-8">Register</h2>
           
           <div className="w-full max-w-lg bg-white rounded-2xl p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 mb-12">
             <form className="space-y-6" onSubmit={handleRegister}>
+              {/* Photo Upload */}
+              <div className="flex flex-col items-center justify-center space-y-3 mb-4">
+                <div className="relative h-24 w-24 rounded-full bg-gray-50 border-2 border-dashed border-gray-200 flex items-center justify-center overflow-hidden group hover:border-primary transition-colors">
+                  {image ? (
+                    <Image src={image} alt="Preview" fill className="object-cover" />
+                  ) : (
+                    <div className="text-center">
+                      <div className="text-[10px] font-bold text-gray-400">UPLOAD</div>
+                      <div className="text-[10px] font-bold text-gray-400">PHOTO</div>
+                    </div>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="absolute inset-0 opacity-0 cursor-pointer"
+                  />
+                </div>
+                <p className="text-[11px] font-medium text-gray-400 uppercase tracking-widest">Profile Picture</p>
+              </div>
+
               <div className="space-y-5">
                 <Input
                   label="Full Name"
@@ -101,6 +141,25 @@ export default function RegisterPage() {
                     className="absolute right-4 top-[38px] text-gray-400 hover:text-gray-600"
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </button>
+                </div>
+
+                <div className="relative">
+                  <Input
+                    label="Confirm Password"
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Re-enter password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="h-12 border-gray-200 focus:border-primary rounded-xl"
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-4 top-[38px] text-gray-400 hover:text-gray-600"
+                  >
+                    {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                 </div>
               </div>

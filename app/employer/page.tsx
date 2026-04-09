@@ -70,10 +70,13 @@ export default function EmployerDashboard() {
           {filteredExams.map((exam) => (
             <ExamCard
               key={exam.id}
+              id={exam.id}
               title={exam.title}
               candidates={exam.totalCandidates || 0}
               questionSets={exam.questionCount || 0}
               slots={exam.totalSlots || 0}
+              onViewCandidates={() => window.location.href = '/employer/candidates'}
+              onEdit={() => window.location.href = `/employer/exams/${exam.id}/edit`}
             />
           ))}
         </div>
