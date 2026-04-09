@@ -31,7 +31,7 @@ model User {
   email     String   @unique
   password  String
   role      Role     @default(CANDIDATE)
-  image     String?
+  image     String?  @db.LongText
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   exams     Exam[]   @relation("EmployerExams")
@@ -49,7 +49,7 @@ model Exam {
   endTime         DateTime
   duration        Int // in minutes
   negativeMarking Float    @default(0.0)
-  image           String?
+  image           String?  @db.LongText
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

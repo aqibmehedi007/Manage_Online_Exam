@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Search, Filter, Mail, Calendar, User as UserIcon } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import AddCandidateModal from '@/components/employer/AddCandidateModal';
 
 interface Candidate {
   id: string;
@@ -18,6 +19,7 @@ export default function CandidateListPage() {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetchCandidates();
@@ -47,10 +49,19 @@ export default function CandidateListPage() {
           <h1 className="text-2xl font-bold text-[#1e293b]">Registered Candidates</h1>
           <p className="text-sm text-gray-400 mt-1">Manage and view all candidates registered in the platform ({candidates.length})</p>
         </div>
-        <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-11 px-6 rounded-xl shadow-lg shadow-primary/20">
+        <Button 
+          onClick={() => setIsModalOpen(true)}
+          className="bg-primary hover:bg-primary/90 text-white font-bold h-11 px-6 rounded-xl shadow-lg shadow-primary/20"
+        >
           + Add New Candidate
         </Button>
       </div>
+
+      <AddCandidateModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        onSuccess={fetchCandidates}
+      />
 
       {/* Filters */}
       <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
