@@ -33,6 +33,7 @@ async function main() {
         email: u.email,
         password: hashedPassword,
         role: u.role,
+        gender: u.gender, // Support gender field from JSON
         image: u.image
       }
     });
@@ -73,21 +74,21 @@ async function main() {
   }
   console.log('📝 Exams and Questions inserted successfully.');
 
-  // 5. Assign Candidates to Exams (Randomly assign each candidate to 1-2 exams)
+  // 5. Assign exactly 10 Candidates to EACH Exam
   const candidates = Array.from(userMap.values()).filter(u => u.role === 'CANDIDATE');
   let assignmentCount = 0;
 
-  for (const cand of candidates) {
-    // Pick 1-2 random exams for each candidate
-    const shuffled = [...createdExams].sort(() => 0.5 - Math.random());
-    const assignedExams = shuffled.slice(0, Math.min(2, createdExams.length));
+  for (const exam of createdExams) {
+    // Pick 10 random candidates for THIS exam
+    const shuffled = [...candidates].sort(() => 0.5 - Math.random());
+    const assignedCandidates = shuffled.slice(0, 10);
 
-    for (const exam of assignedExams) {
+    for (const cand of assignedCandidates) {
       await prisma.submission.create({
         data: {
           userId: cand.id,
           examId: exam.id,
-          status: 'ASSIGNED' // Using the new ASSIGNED status
+          status: 'ASSIGNED'
         }
       });
       assignmentCount++;

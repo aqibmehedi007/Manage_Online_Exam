@@ -16,6 +16,7 @@ export async function GET() {
         id: true,
         name: true,
         email: true,
+        gender: true,
         image: true,
         createdAt: true,
       },
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { name, email, password } = await request.json();
+    const { name, email, password, gender } = await request.json();
 
     if (!name || !email || !password) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -54,6 +55,7 @@ export async function POST(request: Request) {
         name,
         email,
         password: hashedPassword,
+        gender,
         role: 'CANDIDATE',
       },
     });

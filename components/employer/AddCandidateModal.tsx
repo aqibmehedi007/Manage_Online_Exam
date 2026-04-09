@@ -15,6 +15,7 @@ export default function AddCandidateModal({ isOpen, onClose, onSuccess }: AddCan
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('password123'); // Default password
+  const [gender, setGender] = useState<'MALE' | 'FEMALE' | 'OTHER' | ''>('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -26,10 +27,13 @@ export default function AddCandidateModal({ isOpen, onClose, onSuccess }: AddCan
     setError('');
 
     try {
+      if (!gender) {
+        throw new Error('Please select a gender');
+      }
       const res = await fetch('/api/employer/candidates', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, gender }),
       });
 
       const data = await res.json();
@@ -44,6 +48,7 @@ export default function AddCandidateModal({ isOpen, onClose, onSuccess }: AddCan
       setName('');
       setEmail('');
       setPassword('password123');
+      setGender('');
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -111,6 +116,26 @@ export default function AddCandidateModal({ isOpen, onClose, onSuccess }: AddCan
                  />
                </div>
                <p className="text-[10px] text-gray-400 mt-2 italic px-1">Share this password with the candidate for their first login.</p>
+             </div>
+
+             <div>
+                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Gender</label>
+                <div className="grid grid-cols-3 gap-2">
+                  {['MALE', 'FEMALE', 'OTHER'].map((g) => (
+                    <button
+                      key={g}
+                      type="button"
+                      onClick={() => setGender(g as any)}
+                      className={`py-2 rounded-xl border text-[10px] font-bold transition-all ${
+                        gender === g 
+                          ? 'bg-primary border-primary text-white shadow-md shadow-primary/20' 
+                          : 'bg-white border-gray-100 text-gray-400 hover:border-primary/50'
+                      }`}
+                    >
+                      {g.charAt(0) + g.slice(1).toLowerCase()}
+                    </button>
+                  ))}
+                </div>
              </div>
            </div>
 

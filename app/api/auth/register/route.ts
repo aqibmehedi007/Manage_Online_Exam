@@ -6,7 +6,7 @@ import { login as setSession } from '@/lib/auth';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, password, image } = body;
+    const { name, email, password, image, gender } = body;
 
     if (!name || !email || !password) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -28,6 +28,7 @@ export async function POST(request: Request) {
         email,
         password: hashedPassword,
         role: 'CANDIDATE',
+        gender,
         image: image || null,
       },
     });

@@ -15,6 +15,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [gender, setGender] = useState<'MALE' | 'FEMALE' | 'OTHER' | ''>('');
   const [image, setImage] = useState<string | null>(null);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -44,10 +45,14 @@ export default function RegisterPage() {
     setError('');
 
     try {
+      if (!gender) {
+        setError('Please select your gender');
+        return;
+      }
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password, image }),
+        body: JSON.stringify({ name, email, password, image, gender }),
       });
 
       const data = await res.json();
@@ -162,6 +167,26 @@ export default function RegisterPage() {
                   >
                     {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
+                </div>
+
+                <div className="pt-2">
+                  <label className="block text-sm font-bold text-[#1e293b] mb-3">Gender</label>
+                  <div className="grid grid-cols-3 gap-3">
+                    {['MALE', 'FEMALE', 'OTHER'].map((g) => (
+                      <button
+                        key={g}
+                        type="button"
+                        onClick={() => setGender(g as any)}
+                        className={`py-2.5 rounded-xl border text-sm font-bold transition-all ${
+                          gender === g 
+                            ? 'bg-primary border-primary text-white shadow-md shadow-primary/20' 
+                            : 'bg-white border-gray-200 text-gray-500 hover:border-primary/50'
+                        }`}
+                      >
+                        {g.charAt(0) + g.slice(1).toLowerCase()}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
 
