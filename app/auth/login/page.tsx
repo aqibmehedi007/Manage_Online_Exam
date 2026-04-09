@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import Link from 'next/link';
-import Image from 'next/image';
 import Footer from '@/components/Footer';
 import { Eye, EyeOff } from 'lucide-react';
 
@@ -52,13 +51,11 @@ export default function LoginPage() {
       {/* Auth Navbar */}
       <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8 shadow-sm">
         <div className="flex w-full items-center justify-between mx-auto max-w-[1440px]">
-          <div className="relative h-10 w-36">
-            <Image 
-              src="/logo.png" 
-              alt="AKIJ Resource" 
-              fill 
-              className="object-contain"
-            />
+          <div className="flex items-center gap-1">
+            <span className="text-lg font-black tracking-tight text-[#1e293b]">
+              AK<span className="text-primary italic">ij</span>
+            </span>
+            <span className="text-xs font-bold text-[#1e293b] uppercase tracking-widest ml-0.5">Resource</span>
           </div>
           <h1 className="text-xl font-bold text-[#1e293b]">Akij Resource</h1>
           <div className="w-36"></div> {/* Spacer for symmetry */}
