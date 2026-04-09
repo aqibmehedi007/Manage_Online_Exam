@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
 
 interface ExamQuestion {
@@ -11,13 +12,10 @@ interface ExamQuestion {
   options: { id: string; text: string }[];
 }
 
-function LogoText() {
+function NavLogo() {
   return (
-    <div className="flex items-center gap-1">
-      <span className="text-lg font-black tracking-tight text-[#1e293b]">
-        AK<span className="text-primary italic">ij</span>
-      </span>
-      <span className="text-xs font-bold text-[#1e293b] uppercase tracking-widest ml-0.5">Resource</span>
+    <div className="relative h-9 w-32 shrink-0">
+      <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain object-left" />
     </div>
   );
 }
@@ -150,14 +148,22 @@ export default function ExamPage() {
     return (
       <div className="flex flex-col min-h-screen bg-[#f8fafc]">
         <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8">
-          <LogoText />
+          <NavLogo />
           <h1 className="text-base font-bold text-[#1e293b]">Akij Resource</h1>
           <div className="w-36" />
         </nav>
         <main className="flex-1 flex items-center justify-center p-8 relative">
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-10 max-w-lg text-center shadow-xl">
-              <div className="text-5xl mb-4">⏰</div>
+              <div className="flex items-center justify-center mb-4">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="28" r="20" fill="#3b82f6" opacity="0.15"/>
+                  <circle cx="24" cy="28" r="14" stroke="#3b82f6" strokeWidth="2" fill="white"/>
+                  <path d="M18 28l4 4 8-8" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="38" cy="38" r="10" fill="#ef4444"/>
+                  <path d="M34 34l8 8M42 34l-8 8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
               <h2 className="text-xl font-bold text-[#1e293b] mb-3">Timeout!</h2>
               <p className="text-sm text-gray-500 mb-6">
                 Your exam time has been finished. Thank you for participating.
@@ -181,13 +187,18 @@ export default function ExamPage() {
     return (
       <div className="flex flex-col min-h-screen bg-[#f8fafc]">
         <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8">
-          <LogoText />
+          <NavLogo />
           <h1 className="text-base font-bold text-[#1e293b]">Akij Resource</h1>
           <div className="w-36" />
         </nav>
         <main className="flex-1 flex items-center justify-center p-8">
           <div className="bg-white rounded-xl p-16 max-w-3xl w-full text-center border border-gray-200">
-            <div className="text-5xl mb-4">✅</div>
+            <div className="flex items-center justify-center mb-4">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 4L33.5 7.5L39.5 6L43.5 11L50 12L50.5 18.5L55 23.5L52.5 29.5L55 35.5L50.5 40.5L50 47L43.5 48L39.5 53L33.5 51.5L28 55L22.5 51.5L16.5 53L12.5 48L6 47L5.5 40.5L1 35.5L3.5 29.5L1 23.5L5.5 18.5L6 12L12.5 11L16.5 6L22.5 7.5L28 4Z" fill="#3b82f6"/>
+                <path d="M20 29l5 5 11-11" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
             <h2 className="text-xl font-bold text-[#1e293b] mb-3">Test Completed</h2>
             <p className="text-sm text-gray-500 mb-6">
               Congratulations! You have completed your {exam?.title || 'exam'}. Thank you for participating.
@@ -215,7 +226,7 @@ export default function ExamPage() {
     <div className="flex flex-col min-h-screen bg-[#f8fafc]">
       {/* Exam Navbar */}
       <nav className="flex h-16 items-center justify-between border-b border-gray-100 bg-white px-8">
-        <LogoText />
+        <NavLogo />
         <h1 className="text-base font-bold text-[#1e293b]">Akij Resource</h1>
         <div className="w-36" />
       </nav>

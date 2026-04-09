@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -9,11 +10,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <span className="text-sm text-gray-400">Powered by</span>
-          <div className="flex items-center gap-1">
-            <span className="text-base font-black tracking-tight text-white">
-              AK<span className="text-primary italic">ij</span>
-            </span>
-            <span className="text-[10px] font-bold text-white uppercase tracking-widest ml-0.5">Resource</span>
+          <div className="relative h-7 w-28">
+            <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain brightness-0 invert" />
           </div>
         </div>
 

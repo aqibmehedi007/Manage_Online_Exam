@@ -17,7 +17,6 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
   const [confirmOpen, setConfirmOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -44,14 +43,10 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
           {/* Left: Logo + Page Title */}
           <div className="flex items-center gap-6">
             <div
-              className="flex items-center gap-1 cursor-pointer"
+              className="relative h-9 w-32 cursor-pointer shrink-0"
               onClick={() => (window.location.href = '/')}
             >
-              {/* Dark logo fallback — matching Figma "AKIJ RESOURCE" branding */}
-              <span className="text-lg font-black tracking-tight text-[#1e293b]">
-                AK<span className="text-primary italic">ij</span>
-              </span>
-              <span className="text-xs font-bold text-[#1e293b] uppercase tracking-widest ml-0.5">Resource</span>
+              <Image src="/logo.png" alt="AKIJ Resource" fill className="object-contain object-left" />
             </div>
             <span className="text-sm font-medium text-[#475569]">{pageTitle}</span>
           </div>
@@ -63,12 +58,7 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
               className="flex items-center gap-3 cursor-pointer group"
             >
               <div className="relative h-9 w-9 overflow-hidden rounded-full bg-gray-200">
-                <Image
-                  src="/avatar.png"
-                  alt="Profile"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/avatar.png" alt="Profile" fill className="object-cover" />
               </div>
               <div className="hidden xl:block text-right">
                 <div className="flex items-center gap-1.5">
@@ -81,7 +71,6 @@ export default function Navbar({ userEmail, userName, pageTitle = 'Dashboard' }:
               </div>
             </button>
 
-            {/* Dropdown Menu */}
             {dropdownOpen && (
               <div className="absolute right-0 top-14 w-48 bg-white rounded-lg border border-gray-200 shadow-lg py-1 z-50">
                 <div className="px-4 py-2.5 border-b border-gray-100">
