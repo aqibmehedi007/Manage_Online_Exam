@@ -19,23 +19,28 @@ A production-ready Online Assessment Platform built with Next.js 16 (App Router)
    ```env
    DATABASE_URL="mysql://root:@localhost:3306/online_exam"
    ```
-4. Set up the database:
+4. **Set up the Database (Two Options)**:
+   
+   *Option A: Automated Setup (Recommended)*
+   Because this project uses Prisma, you don't need to manually import SQL files! Just run:
    ```bash
    npx prisma db push
-   ```
-5. Seed the database with Bangladeshi demo data:
-   ```bash
    npm run seed
    ```
-6. Run the development server:
+
+   *Option B: Manual Import (Legacy)*
+   If you prefer a traditional setup, you can manually import the included `exam.sql` file into a MySQL database named `online_exam` using your preferred database tool (e.g., PhpMyAdmin, TablePlus).
+
+5. Run the development server:
    ```bash
    npm run dev
    ```
 
 ### 🔑 Test Accounts
-- **Employer**: `employer@akij.work` / `password123`
-- **Candidate**: `candidate@akij.work` / `password123`
-*(Additional Bangladeshi test accounts are available in the system after seeding)*
+For a complete evaluation of the platform's multi-role architecture, use the following credentials:
+- **Super Admin**: `superadmin@akij.work` / `password123` (Full system monitor)
+- **Employer**: `employer@akij.work` / `password123` (Exam management)
+- **Candidate**: `candidate@akij.work` / `password123` (Main test session)
 
 ---
 
@@ -63,9 +68,32 @@ In this project, I have implemented **localStorage synchronization**.
 
 ---
 
-## ✨ Key Features
-- **Design-Exact UI**: Pixel-perfect alignment with provided Figma screens.
-- **Exam Engine**: Supports Radio, Checkbox, and Text question types with lettered options (A/B/C).
-- **Proctoring**: Real-time detection of tab switching and fullscreen exit with activity logging.
-- **Responsive Navigation**: Context-aware Navbar and Footer with secure sign-out confirmation.
-- **Bangladeshi Context**: Seeded with realistic Bangladeshi names, locations, and banking-domain questions.
+## ✨ Above & Beyond: Advanced features
+This project implements several sophisticated features that exceed the standard requirements to demonstrate advanced full-stack skills:
+
+### 1. 👑 Super Admin System Dashboard
+A top-level administrative center featuring global analytics:
+- **Platform Health**: Real-time monitoring of total users, active exams, and database vitals.
+- **Global Integrity Monitoring**: Measures the system-wide "Integrity Score" across all employers and tests.
+- **Activity Feed**: Live event tracking for all major system actions (e.g., test creation, completion).
+
+### 2. 🛡️ High-Fidelity Proctoring & Results Dashboard
+Employers have access to a dedicated **Results & Integrity Center** for every exam.
+- **Detailed Tracking**: Detects and logs every **Tab Switch** and **Fullscreen Exit** during an exam.
+- **Visual Warnings**: Automated warning badges (Red/Amber) highlight suspicious behavior.
+- **Performance Summary**: Global average scores and completion rates per test.
+
+### 3. 🚻 Gender-Aware Implementation
+Full-stack integration of gender support across the platform:
+- **Data Integrity**: Candidates generated during seeding have names and profiles correctly matched to their gender.
+- **UI Customization**: Gender selection included in both Registration and Employer management workflows.
+
+### 4. 🗄️ Full Full-Stack Architecture (Bonus)
+Unlike standard mock-ups, this platform uses a robust **Prisma + MySQL** backend.
+- **Relational Integrity**: Complete enterprise-ready schema for Users, Exams, Questions, and Submissions.
+- **Complex Aggregations**: Backend-driven stats calculation for scores and platform-wide metrics.
+
+### 5. 🏗️ Advanced UI/UX Components
+- **Dynamic Pagination**: Custom "Items per page" logic and state-driven navigation for large datasets.
+- **Offline Resilience**: `localStorage` synchronization immediately saves candidate progress to prevent data loss.
+- **Visual Excellence**: Pixel-perfect alignment with Figma, featuring vibrant gradients, smooth transitions, and premium typography.
