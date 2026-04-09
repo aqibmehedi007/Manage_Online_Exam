@@ -2,205 +2,335 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useCreateExamStore } from '@/store/useCreateExamStore';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { ChevronDown, Clock, Plus, Trash2, CheckCircle2 } from 'lucide-react';
-import useExamStore from '@/lib/store';
+import { CheckCircle, Edit3 } from 'lucide-react';
+import QuestionModal from '@/components/employer/QuestionModal';
 
 export default function CreateTestPage() {
   const router = useRouter();
-  const { step, setStep, examData, updateExamData, addQuestion, removeQuestion, reset } = useExamStore();
+  const { step, setStep, basicInfo, updateBasicInfo, questions, removeQuestion, reset } = useCreateExamStore();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentQuestionId, setCurrentQuestionId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [viewMode, setViewMode] = useState(false);
 
-  const [currentQuestionTitle, setCurrentQuestionTitle] = useState('');
-  const [options, setOptions] = useState([
-    { text: '', isCorrect: false },
-    { text: '', isCorrect: false },
-    { text: '', isCorrect: false },
-    { text: '', isCorrect: false },
-  ]);
+  const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
-  const handleAddQuestion = () => {
-    if (!currentQuestionTitle.trim()) return;
-    addQuestion({
-      title: currentQuestionTitle,
-      type: 'RADIO',
-      options: [...options],
-    });
-    setCurrentQuestionTitle('');
-    setOptions([
-      { text: '', isCorrect: false },
-      { text: '', isCorrect: false },
-      { text: '', isCorrect: false },
-      { text: '', isCorrect: false },
-    ]);
+  const handleSaveBasicInfo = () => {
+    if (!basicInfo.title) return alert('Please enter a title');
+    setViewMode(true);
   };
 
-  const handleSaveExam = async () => {
+  const handleContinueToStep2 = () => {
+    setStep(2);
+  };
+
+  const handlePublish = async () => {
     setLoading(true);
     try {
       const res = await fetch('/api/employer/exams', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(examData),
+        body: JSON.stringify({ ...basicInfo, questions }),
       });
-
       if (res.ok) {
         reset();
         router.push('/employer');
       } else {
-        const err = await res.json();
-        alert(err.error || 'Failed to save exam');
+        const data = await res.json();
+        alert(data.error || 'Failed to save exam');
       }
-    } catch (error) {
-      console.error('Save error:', error);
+    } catch {
+      alert('Network error');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="mx-auto max-w-[1440px] space-y-10">
-      <div className="bg-white rounded-[32px] p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-        <div className="flex items-center justify-between mb-10">
-          <h1 className="text-2xl font-bold text-slate-800">Manage Online Test</h1>
-          <Button variant="outline" onClick={() => router.push('/employer')} className="rounded-2xl border-slate-200 text-slate-600 font-bold hover:bg-slate-50 px-8 h-12">
+    <div className="mx-auto max-w-[1000px] space-y-6">
+      {/* Step Header Card */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6">
+        <h2 className="text-lg font-bold text-[#1e293b] mb-4">Manage Online Test</h2>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {/* Step 1 */}
+            <div className="flex items-center gap-2">
+              {step >= 2 || viewMode ? (
+                <CheckCircle className="h-5 w-5 text-primary fill-primary text-white" />
+              ) : (
+                <div className="flex items-center justify-center h-5 w-5 rounded-full bg-primary text-white text-xs font-bold">1</div>
+              )}
+              <span className={`text-sm font-medium ${step === 1 ? 'text-primary' : 'text-gray-500'}`}>Basic Info</span>
+            </div>
+            {/* Connector */}
+            <div className="w-16 h-px bg-gray-300" />
+            {/* Step 2 */}
+            <div className="flex items-center gap-2">
+              {step === 2 ? (
+                <CheckCircle className="h-5 w-5 text-primary fill-primary text-white" />
+              ) : (
+                <div className="flex items-center justify-center h-5 w-5 rounded-full bg-gray-300 text-white text-xs font-bold">2</div>
+              )}
+              <span className={`text-sm font-medium ${step === 2 ? 'text-primary' : 'text-gray-500'}`}>Questions Sets</span>
+            </div>
+          </div>
+          <button
+            onClick={() => { reset(); router.push('/employer'); }}
+            className="px-5 py-2 text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
             Back to Dashboard
-          </Button>
-        </div>
-
-        {/* Stepper */}
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-3">
-            <div className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${step >= 1 ? 'bg-primary text-white' : 'bg-slate-100 text-slate-400'}`}>1</div>
-            <span className={`text-sm font-bold ${step >= 1 ? 'text-primary' : 'text-slate-400'}`}>Basic Info</span>
-          </div>
-          <div className="h-[1px] w-16 bg-slate-200"></div>
-          <div className="flex items-center space-x-3">
-            <div className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${step >= 2 ? 'bg-primary text-white' : 'bg-slate-100 text-slate-400'}`}>2</div>
-            <span className={`text-sm font-bold ${step >= 2 ? 'text-primary' : 'text-slate-400'}`}>Questions Sets</span>
-          </div>
+          </button>
         </div>
       </div>
 
-      {step === 1 ? (
-        <div className="bg-white rounded-[32px] p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-          <h2 className="text-xl font-bold text-slate-800 mb-10 border-b border-slate-50 pb-6">Basic Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="md:col-span-2">
-              <label className="block text-sm font-bold text-slate-700 mb-3">Online Test Title <span className="text-red-500">*</span></label>
-              <input type="text" placeholder="Enter online test title" className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" value={examData.title} onChange={(e) => updateExamData({ title: e.target.value })} />
-            </div>
+      {/* Step 1: Basic Info */}
+      {step === 1 && !viewMode && (
+        <div className="bg-white rounded-xl border border-gray-200 p-8">
+          <h3 className="text-base font-bold text-[#1e293b] mb-6">Basic Information</h3>
+          
+          <div className="space-y-5">
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-3">Total Candidates <span className="text-red-500">*</span></label>
-              <input type="number" placeholder="Enter total candidates" className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" value={examData.totalCandidates} onChange={(e) => updateExamData({ totalCandidates: parseInt(e.target.value) })} />
+              <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Online Test Title <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                value={basicInfo.title}
+                onChange={(e) => updateBasicInfo({ title: e.target.value })}
+                placeholder="Enter online test title"
+                className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors"
+              />
             </div>
-            <div>
-              <label className="block text-sm font-bold text-slate-700 mb-3">Total Slots <span className="text-red-500">*</span></label>
-              <div className="relative">
-                <select className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none" value={examData.totalSlots} onChange={(e) => updateExamData({ totalSlots: parseInt(e.target.value) })}>
-                  <option value="">Select total slots</option>
-                  <option value="1">1 Slot</option>
-                  <option value="3">3 Slots</option>
-                  <option value="5">5 Slots</option>
-                </select>
-                <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 pointer-events-none" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-slate-700 mb-3">Total Question Set <span className="text-red-500">*</span></label>
-              <div className="relative">
-                <select className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none" value={examData.totalQuestions} onChange={(e) => updateExamData({ totalQuestions: parseInt(e.target.value) })}>
-                  <option value="">Select total question set</option>
-                  <option value="10">10 Questions</option>
-                  <option value="20">20 Questions</option>
-                  <option value="30">30 Questions</option>
-                </select>
-                <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 pointer-events-none" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-slate-700 mb-3">Question Type <span className="text-red-500">*</span></label>
-              <div className="relative">
-                <select className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none" value={examData.questionType} onChange={(e) => updateExamData({ questionType: e.target.value })}>
-                  <option value="MCQ">Multiple Choice Questions</option>
-                </select>
-                <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 pointer-events-none" />
-              </div>
-            </div>
-            <div className="relative">
-              <label className="block text-sm font-bold text-slate-700 mb-3">Start Time <span className="text-red-500">*</span></label>
-              <div className="relative group">
-                <input type="text" placeholder="2024-05-20 09:00:00" className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" value={examData.startTime} onChange={(e) => updateExamData({ startTime: e.target.value })} />
-                <Clock className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-hover:text-primary transition-colors" />
-              </div>
-            </div>
-            <div className="relative">
-              <label className="block text-sm font-bold text-slate-700 mb-3">End Time <span className="text-red-500">*</span></label>
-              <div className="relative group">
-                <input type="text" placeholder="2024-05-20 17:00:00" className="w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" value={examData.endTime} onChange={(e) => updateExamData({ endTime: e.target.value })} />
-                <Clock className="absolute right-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-hover:text-primary transition-colors" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-slate-700 mb-3">Duration (min)</label>
-              <input type="number" className="w-full h-14 px-6 bg-slate-50 border border-slate-100 rounded-2xl text-slate-500" value={examData.duration} onChange={(e) => updateExamData({ duration: parseInt(e.target.value) })} />
-            </div>
-          </div>
-          <div className="mt-16 flex items-center justify-between">
-            <Button variant="outline" onClick={() => reset()} className="rounded-2xl border-slate-200 text-slate-600 font-bold hover:bg-slate-50 px-12 h-14">Cancel</Button>
-            <Button onClick={() => setStep(2)} className="rounded-2xl bg-primary hover:bg-primary/90 text-white font-bold px-12 h-14 shadow-lg shadow-primary/20">Save & Continue</Button>
-          </div>
-        </div>
-      ) : (
-        <div className="space-y-10">
-          <div className="bg-white rounded-[32px] p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-            <h2 className="text-xl font-bold text-slate-800 mb-10">Question Builder</h2>
-            <div className="space-y-8">
+            
+            <div className="grid grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-3">Question Title</label>
-                <input type="text" placeholder="Enter question text" className="w-full h-14 px-6 border border-slate-200 rounded-2xl" value={currentQuestionTitle} onChange={(e) => setCurrentQuestionTitle(e.target.value)} />
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Total Candidates <span className="text-red-500">*</span></label>
+                <input
+                  type="number"
+                  value={basicInfo.totalCandidates || ''}
+                  onChange={(e) => updateBasicInfo({ totalCandidates: Number(e.target.value) })}
+                  placeholder="Enter total candidates"
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors"
+                />
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                {options.map((opt, i) => (
-                  <div key={i} className={`flex items-center space-x-4 p-4 border rounded-2xl ${opt.isCorrect ? 'border-primary bg-primary/5' : 'border-slate-100'}`}>
-                    <input type="text" placeholder={`Option ${i + 1}`} className="flex-1 bg-transparent outline-none text-sm font-medium" value={opt.text} onChange={(e) => {
-                      const newOpts = [...options];
-                      newOpts[i].text = e.target.value;
-                      setOptions(newOpts);
-                    }} />
-                    <button onClick={() => {
-                      const newOpts = options.map((o, idx) => ({ ...o, isCorrect: idx === i }));
-                      setOptions(newOpts);
-                    }} className={`h-6 w-6 rounded-full border-2 flex items-center justify-center ${opt.isCorrect ? 'border-primary bg-primary' : 'border-slate-300'}`}>
-                      {opt.isCorrect && <div className="h-2 w-2 rounded-full bg-white" />}
-                    </button>
-                  </div>
-                ))}
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Total Slots <span className="text-red-500">*</span></label>
+                <select
+                  value={basicInfo.totalSlots}
+                  onChange={(e) => updateBasicInfo({ totalSlots: Number(e.target.value) })}
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors bg-white appearance-none"
+                >
+                  <option value="">Select total slots</option>
+                  {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
               </div>
-              <Button onClick={handleAddQuestion} className="w-full h-14 bg-slate-900 text-white rounded-2xl font-bold"><Plus className="mr-2 h-5 w-5" /> Add Question to Set</Button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Total Question Set <span className="text-red-500">*</span></label>
+                <select
+                  value={basicInfo.questionSets}
+                  onChange={(e) => updateBasicInfo({ questionSets: Number(e.target.value) })}
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors bg-white appearance-none"
+                >
+                  <option value="">Select total question set</option>
+                  {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Question Type <span className="text-red-500">*</span></label>
+                <select
+                  value={basicInfo.questionType}
+                  onChange={(e) => updateBasicInfo({ questionType: e.target.value })}
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors bg-white appearance-none"
+                >
+                  <option value="MCQ">MCQ</option>
+                  <option value="Written">Written</option>
+                  <option value="Mixed">Mixed</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Start Time <span className="text-red-500">*</span></label>
+                <input
+                  type="datetime-local"
+                  value={basicInfo.startTime}
+                  onChange={(e) => updateBasicInfo({ startTime: e.target.value })}
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">End Time <span className="text-red-500">*</span></label>
+                <input
+                  type="datetime-local"
+                  value={basicInfo.endTime}
+                  onChange={(e) => updateBasicInfo({ endTime: e.target.value })}
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1e293b] mb-1.5">Duration</label>
+                <input
+                  type="number"
+                  value={basicInfo.duration || ''}
+                  onChange={(e) => updateBasicInfo({ duration: Number(e.target.value) })}
+                  placeholder="Duration Time"
+                  className="w-full h-11 px-4 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary transition-colors"
+                />
+              </div>
             </div>
           </div>
-
-          {examData.questions.length > 0 && (
-            <div className="bg-white rounded-[32px] p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 space-y-6">
-              <h3 className="text-lg font-bold text-slate-800">Added Questions ({examData.questions.length})</h3>
-              <div className="space-y-4">
-                {examData.questions.map((q, i) => (
-                  <div key={i} className="flex items-center justify-between p-6 border border-slate-100 rounded-2xl bg-slate-50/50">
-                    <div>
-                      <span className="text-xs font-bold text-primary uppercase mb-1 block">Question {i + 1}</span>
-                      <p className="font-bold text-slate-700">{q.title}</p>
-                    </div>
-                    <button onClick={() => removeQuestion(i)} className="text-slate-400 hover:text-red-500 transition-colors"><Trash2 className="h-5 w-5" /></button>
-                  </div>
-                ))}
-              </div>
-              <Button onClick={handleSaveExam} isLoading={loading} className="w-full h-16 bg-primary text-white rounded-2xl text-xl font-bold shadow-xl shadow-primary/20">Finalize & Create Online Test</Button>
-            </div>
-          )}
         </div>
       )}
+
+      {/* Step 1: View Mode (after save) */}
+      {step === 1 && viewMode && (
+        <div className="bg-white rounded-xl border border-gray-200 p-8">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-base font-bold text-[#1e293b]">Basic Information</h3>
+            <button onClick={() => setViewMode(false)} className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80">
+              <Edit3 className="h-4 w-4" />
+              Edit
+            </button>
+          </div>
+
+          <div className="space-y-5">
+            <div>
+              <span className="text-sm text-gray-400">Online Test Title</span>
+              <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.title}</p>
+            </div>
+            <div className="grid grid-cols-4 gap-6">
+              <div>
+                <span className="text-sm text-gray-400">Total Candidates</span>
+                <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.totalCandidates ? basicInfo.totalCandidates.toLocaleString() : 'Not Set'}</p>
+              </div>
+              <div>
+                <span className="text-sm text-gray-400">Total Slots</span>
+                <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.totalSlots || 'Not Set'}</p>
+              </div>
+              <div>
+                <span className="text-sm text-gray-400">Total Question Set</span>
+                <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.questionSets || 'Not Set'}</p>
+              </div>
+              <div>
+                <span className="text-sm text-gray-400">Duration Per Slots (Minutes)</span>
+                <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.duration || 'Not Set'}</p>
+              </div>
+            </div>
+            <div>
+              <span className="text-sm text-gray-400">Question Type</span>
+              <p className="text-sm font-medium text-[#1e293b] mt-0.5">{basicInfo.questionType}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Step 2: Question List */}
+      {step === 2 && (
+        <div className="space-y-4">
+          {questions.length > 0 && questions.map((q, idx) => (
+            <div key={q.id} className="bg-white rounded-xl border border-gray-200 p-6">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-bold text-[#1e293b]">Question {idx + 1}</span>
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-0.5 text-xs font-medium border border-gray-200 rounded text-gray-500">
+                    {q.type === 'RADIO' ? 'MCQ' : q.type === 'CHECKBOX' ? 'Checkbox' : 'Text'}
+                  </span>
+                  <span className="px-2.5 py-0.5 text-xs font-medium border border-gray-200 rounded text-gray-500">1 pt</span>
+                </div>
+              </div>
+
+              <p className="font-semibold text-sm text-[#1e293b] mb-3">{q.title}</p>
+
+              {q.type !== 'TEXT' && q.options.map((opt, oIdx) => (
+                <div
+                  key={oIdx}
+                  className={`flex items-center gap-3 px-4 py-2.5 mb-1.5 rounded-lg text-sm ${
+                    opt.isCorrect ? 'bg-[#f0fdf4] border border-green-200' : 'border border-transparent'
+                  }`}
+                >
+                  <span className="text-gray-500">{LETTERS[oIdx]}.</span>
+                  <span className="text-[#1e293b]">{opt.text}</span>
+                  {opt.isCorrect && (
+                    <CheckCircle className="h-4 w-4 text-green-500 ml-auto" />
+                  )}
+                </div>
+              ))}
+
+              {q.type === 'TEXT' && (
+                <p className="text-sm text-gray-400 italic px-4 py-2">Written answer expected from candidate.</p>
+              )}
+
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                <button
+                  onClick={() => { setCurrentQuestionId(q.id); setIsModalOpen(true); }}
+                  className="text-sm font-medium text-primary hover:text-primary/80"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => removeQuestion(q.id)}
+                  className="text-sm font-medium text-red-500 hover:text-red-600"
+                >
+                  Remove From Exam
+                </button>
+              </div>
+            </div>
+          ))}
+
+          {/* Add Question Button */}
+          <button
+            onClick={() => { setCurrentQuestionId(null); setIsModalOpen(true); }}
+            className="w-full py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors text-sm"
+          >
+            Add Question
+          </button>
+        </div>
+      )}
+
+      {/* Footer Actions */}
+      <div className="bg-white rounded-xl border border-gray-200 p-5 flex items-center justify-between">
+        <button
+          onClick={() => {
+            if (step === 2) setStep(1);
+            else { reset(); router.push('/employer'); }
+          }}
+          className="px-8 py-2.5 text-sm font-medium border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Cancel
+        </button>
+        {step === 1 && !viewMode && (
+          <Button onClick={handleSaveBasicInfo} className="px-8 py-2.5 text-sm font-semibold bg-primary rounded-lg">
+            Save & Continue
+          </Button>
+        )}
+        {step === 1 && viewMode && (
+          <Button onClick={handleContinueToStep2} className="px-8 py-2.5 text-sm font-semibold bg-primary rounded-lg">
+            Save & Continue
+          </Button>
+        )}
+        {step === 2 && (
+          <Button
+            onClick={handlePublish}
+            isLoading={loading}
+            disabled={questions.length === 0}
+            className="px-8 py-2.5 text-sm font-semibold bg-primary rounded-lg"
+          >
+            Publish Online Test
+          </Button>
+        )}
+      </div>
+
+      {/* Question Modal */}
+      <QuestionModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        questionId={currentQuestionId}
+        onSaveAndAddMore={() => setCurrentQuestionId(null)}
+      />
     </div>
   );
 }

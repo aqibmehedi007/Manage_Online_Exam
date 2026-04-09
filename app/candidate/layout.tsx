@@ -13,8 +13,9 @@ export default async function CandidateLayout({
   const user = session ? await prisma.user.findUnique({ where: { id: session.id } }) : null;
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar userEmail={session?.email} userName={user?.name || undefined} />
+    <div className="flex flex-col min-h-screen bg-[#f8fafc]">
+      <Navbar userEmail={session?.email} userName={user?.name || undefined} pageTitle="Dashboard" />
+      <div className="h-1 bg-primary" />
       <main className="flex-1 flex flex-col pt-4">
         <div className="flex-1 px-8 pb-12">
           {children}
