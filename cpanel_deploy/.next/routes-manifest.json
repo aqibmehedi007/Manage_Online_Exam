@@ -1,0 +1,234 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/candidate/exams/[id]",
+      "regex": "^/api/candidate/exams/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/candidate/exams/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/candidate/exams/[id]/log",
+      "regex": "^/api/candidate/exams/([^/]+?)/log(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/candidate/exams/(?<nxtPid>[^/]+?)/log(?:/)?$"
+    },
+    {
+      "page": "/api/candidate/exams/[id]/result",
+      "regex": "^/api/candidate/exams/([^/]+?)/result(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/candidate/exams/(?<nxtPid>[^/]+?)/result(?:/)?$"
+    },
+    {
+      "page": "/api/candidate/exams/[id]/submit",
+      "regex": "^/api/candidate/exams/([^/]+?)/submit(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/candidate/exams/(?<nxtPid>[^/]+?)/submit(?:/)?$"
+    },
+    {
+      "page": "/api/employer/exams/[id]",
+      "regex": "^/api/employer/exams/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/employer/exams/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/employer/exams/[id]/submissions",
+      "regex": "^/api/employer/exams/([^/]+?)/submissions(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/employer/exams/(?<nxtPid>[^/]+?)/submissions(?:/)?$"
+    },
+    {
+      "page": "/candidate/exam/[id]",
+      "regex": "^/candidate/exam/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/candidate/exam/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/candidate/results/[id]",
+      "regex": "^/candidate/results/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/candidate/results/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/employer/exams/[id]/candidates",
+      "regex": "^/employer/exams/([^/]+?)/candidates(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/employer/exams/(?<nxtPid>[^/]+?)/candidates(?:/)?$"
+    },
+    {
+      "page": "/employer/exams/[id]/edit",
+      "regex": "^/employer/exams/([^/]+?)/edit(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/employer/exams/(?<nxtPid>[^/]+?)/edit(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/api/admin/stats",
+      "regex": "^/api/admin/stats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/stats(?:/)?$"
+    },
+    {
+      "page": "/api/auth/login",
+      "regex": "^/api/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login(?:/)?$"
+    },
+    {
+      "page": "/api/auth/logout",
+      "regex": "^/api/auth/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/logout(?:/)?$"
+    },
+    {
+      "page": "/api/auth/register",
+      "regex": "^/api/auth/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/register(?:/)?$"
+    },
+    {
+      "page": "/api/candidate/exams",
+      "regex": "^/api/candidate/exams(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/candidate/exams(?:/)?$"
+    },
+    {
+      "page": "/api/employer/candidates",
+      "regex": "^/api/employer/candidates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/employer/candidates(?:/)?$"
+    },
+    {
+      "page": "/api/employer/exams",
+      "regex": "^/api/employer/exams(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/employer/exams(?:/)?$"
+    },
+    {
+      "page": "/auth/login",
+      "regex": "^/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/login(?:/)?$"
+    },
+    {
+      "page": "/auth/register",
+      "regex": "^/auth/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/register(?:/)?$"
+    },
+    {
+      "page": "/candidate",
+      "regex": "^/candidate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/candidate(?:/)?$"
+    },
+    {
+      "page": "/employer",
+      "regex": "^/employer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employer(?:/)?$"
+    },
+    {
+      "page": "/employer/candidates",
+      "regex": "^/employer/candidates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employer/candidates(?:/)?$"
+    },
+    {
+      "page": "/employer/create-test",
+      "regex": "^/employer/create\\-test(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employer/create\\-test(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

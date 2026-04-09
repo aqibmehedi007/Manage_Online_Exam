@@ -1,0 +1,410 @@
+[
+  {
+    "name": "Employer At Akij",
+    "email": "employer@akij.work",
+    "password": "password123",
+    "role": "EMPLOYER",
+    "gender": "MALE",
+    "image": null
+  },
+  {
+    "name": "Fahim Patwary",
+    "email": "fahim.patwary.789@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=fahim.patwary.789@dhakabank.com.bd"
+  },
+  {
+    "name": "Mehedi Patwary",
+    "email": "mehedi.patwary.81@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=mehedi.patwary.81@yahoo.com"
+  },
+  {
+    "name": "Bakul Munshi",
+    "email": "bakul.munshi.505@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=bakul.munshi.505@outlook.com"
+  },
+  {
+    "name": "Sajid Islam",
+    "email": "sajid.islam.942@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sajid.islam.942@yahoo.com"
+  },
+  {
+    "name": "Zahid Chowdhury",
+    "email": "zahid.chowdhury.665@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=zahid.chowdhury.665@gmail.com"
+  },
+  {
+    "name": "Arif Chowdhury",
+    "email": "arif.chowdhury.372@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=arif.chowdhury.372@outlook.com"
+  },
+  {
+    "name": "Fahim Bhuiyan",
+    "email": "fahim.bhuiyan.68@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=fahim.bhuiyan.68@yahoo.com"
+  },
+  {
+    "name": "Rakib Islam",
+    "email": "rakib.islam.656@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=rakib.islam.656@akij.work"
+  },
+  {
+    "name": "Sabbir Sharif",
+    "email": "sabbir.sharif.452@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sabbir.sharif.452@gmail.com"
+  },
+  {
+    "name": "Sadat Biswas",
+    "email": "sadat.biswas.311@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sadat.biswas.311@outlook.com"
+  },
+  {
+    "name": "Sabbir Miah",
+    "email": "sabbir.miah.343@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sabbir.miah.343@yahoo.com"
+  },
+  {
+    "name": "Moin Bhuiyan",
+    "email": "moin.bhuiyan.802@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=moin.bhuiyan.802@gmail.com"
+  },
+  {
+    "name": "Sadat Sharif",
+    "email": "sadat.sharif.154@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sadat.sharif.154@yahoo.com"
+  },
+  {
+    "name": "Emon Biswas",
+    "email": "emon.biswas.628@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=emon.biswas.628@akij.work"
+  },
+  {
+    "name": "Tanvir Rahman",
+    "email": "tanvir.rahman.415@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=tanvir.rahman.415@akij.work"
+  },
+  {
+    "name": "Zahid Munshi",
+    "email": "zahid.munshi.639@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=zahid.munshi.639@outlook.com"
+  },
+  {
+    "name": "Aditya Siddique",
+    "email": "aditya.siddique.617@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=aditya.siddique.617@dhakabank.com.bd"
+  },
+  {
+    "name": "Tarek Patwary",
+    "email": "tarek.patwary.374@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=tarek.patwary.374@dhakabank.com.bd"
+  },
+  {
+    "name": "Shohag Dewan",
+    "email": "shohag.dewan.896@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=shohag.dewan.896@gmail.com"
+  },
+  {
+    "name": "Nabil Patwary",
+    "email": "nabil.patwary.29@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=nabil.patwary.29@dhakabank.com.bd"
+  },
+  {
+    "name": "Rumman Talukder",
+    "email": "rumman.talukder.221@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=rumman.talukder.221@gmail.com"
+  },
+  {
+    "name": "Moin Rahman",
+    "email": "moin.rahman.121@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=moin.rahman.121@gmail.com"
+  },
+  {
+    "name": "Bakul Sharif",
+    "email": "bakul.sharif.995@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=bakul.sharif.995@akij.work"
+  },
+  {
+    "name": "Sadat Miah",
+    "email": "sadat.miah.315@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=sadat.miah.315@gmail.com"
+  },
+  {
+    "name": "Bakul Miah",
+    "email": "bakul.miah.124@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "MALE",
+    "image": "https://i.pravatar.cc/150?u=bakul.miah.124@dhakabank.com.bd"
+  },
+  {
+    "name": "Farhana Siddique",
+    "email": "farhana.siddique.692@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=farhana.siddique.692@gmail.com"
+  },
+  {
+    "name": "Sumi Haque",
+    "email": "sumi.haque.557@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=sumi.haque.557@outlook.com"
+  },
+  {
+    "name": "Jebin Chowdhury",
+    "email": "jebin.chowdhury.145@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=jebin.chowdhury.145@akij.work"
+  },
+  {
+    "name": "Mim Sharif",
+    "email": "mim.sharif.994@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=mim.sharif.994@akij.work"
+  },
+  {
+    "name": "Anika Miah",
+    "email": "anika.miah.89@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=anika.miah.89@outlook.com"
+  },
+  {
+    "name": "Jebin Khan",
+    "email": "jebin.khan.587@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=jebin.khan.587@yahoo.com"
+  },
+  {
+    "name": "Priya Patwary",
+    "email": "priya.patwary.709@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=priya.patwary.709@dhakabank.com.bd"
+  },
+  {
+    "name": "Tahmina Khan",
+    "email": "tahmina.khan.175@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=tahmina.khan.175@akij.work"
+  },
+  {
+    "name": "Tasneem Sarkar",
+    "email": "tasneem.sarkar.256@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=tasneem.sarkar.256@dhakabank.com.bd"
+  },
+  {
+    "name": "Ishrat Ali",
+    "email": "ishrat.ali.593@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=ishrat.ali.593@dhakabank.com.bd"
+  },
+  {
+    "name": "Sumi Ali",
+    "email": "sumi.ali.955@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=sumi.ali.955@dhakabank.com.bd"
+  },
+  {
+    "name": "Maya Talukder",
+    "email": "maya.talukder.702@akij.work",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=maya.talukder.702@akij.work"
+  },
+  {
+    "name": "Aparna Ali",
+    "email": "aparna.ali.271@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=aparna.ali.271@dhakabank.com.bd"
+  },
+  {
+    "name": "Purnima Miah",
+    "email": "purnima.miah.837@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=purnima.miah.837@dhakabank.com.bd"
+  },
+  {
+    "name": "Tanjila Rahman",
+    "email": "tanjila.rahman.932@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=tanjila.rahman.932@yahoo.com"
+  },
+  {
+    "name": "Purnima Uddin",
+    "email": "purnima.uddin.208@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=purnima.uddin.208@outlook.com"
+  },
+  {
+    "name": "Maya Patwary",
+    "email": "maya.patwary.946@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=maya.patwary.946@yahoo.com"
+  },
+  {
+    "name": "Sadia Islam",
+    "email": "sadia.islam.678@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=sadia.islam.678@yahoo.com"
+  },
+  {
+    "name": "Tahmina Khan",
+    "email": "tahmina.khan.889@dhakabank.com.bd",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=tahmina.khan.889@dhakabank.com.bd"
+  },
+  {
+    "name": "Riya Rahman",
+    "email": "riya.rahman.174@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=riya.rahman.174@gmail.com"
+  },
+  {
+    "name": "Anika Patwary",
+    "email": "anika.patwary.593@outlook.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=anika.patwary.593@outlook.com"
+  },
+  {
+    "name": "Sumi Ahmed",
+    "email": "sumi.ahmed.696@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=sumi.ahmed.696@gmail.com"
+  },
+  {
+    "name": "Farhana Patwary",
+    "email": "farhana.patwary.854@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=farhana.patwary.854@gmail.com"
+  },
+  {
+    "name": "Mou Patwary",
+    "email": "mou.patwary.11@gmail.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=mou.patwary.11@gmail.com"
+  },
+  {
+    "name": "Purnima Chowdhury",
+    "email": "purnima.chowdhury.841@yahoo.com",
+    "password": "password123",
+    "role": "CANDIDATE",
+    "gender": "FEMALE",
+    "image": "https://i.pravatar.cc/150?u=purnima.chowdhury.841@yahoo.com"
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "title": "Dhaka Bank - Management Trainee Officer (MTO)",
+    "totalCandidates": 100,
+    "totalSlots": 5,
+    "questionSets": 25,
+    "questionType": "MCQ",
+    "startTime": "2026-05-10T10:00",
+    "endTime": "2026-05-10T12:00",
+    "duration": 60,
+    "negativeMarking": 0.25,
+    "questions": [
+      {
+        "title": "What is the primary function of a commercial bank?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Accepting deposits",
+            "isCorrect": true
+          },
+          {
+            "text": "Formulating monetary policy",
+            "isCorrect": false
+          },
+          {
+            "text": "Printing currency",
+            "isCorrect": false
+          },
+          {
+            "text": "Regulating stock market",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Which organization regulates banks in Bangladesh?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Ministry of Finance",
+            "isCorrect": false
+          },
+          {
+            "text": "Bangladesh Bank",
+            "isCorrect": true
+          },
+          {
+            "text": "SEC",
+            "isCorrect": false
+          },
+          {
+            "text": "NBR",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Akij Resource - IT Specialist Recruitment",
+    "totalCandidates": 50,
+    "totalSlots": 2,
+    "questionSets": 15,
+    "questionType": "BOTH",
+    "startTime": "2026-04-20T14:00",
+    "endTime": "2026-04-20T16:00",
+    "duration": 90,
+    "negativeMarking": 0.5,
+    "questions": [
+      {
+        "title": "Which of these is a NoSQL database?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "MongoDB",
+            "isCorrect": true
+          },
+          {
+            "text": "PostgreSQL",
+            "isCorrect": false
+          },
+          {
+            "text": "Redis",
+            "isCorrect": true
+          },
+          {
+            "text": "MySQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Explain the concept of Dependency Injection in React.",
+        "type": "TEXT",
+        "options": []
+      }
+    ]
+  }
+]
