@@ -48,11 +48,6 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  // Default redirect if at root
-  if (pathname === '/') {
-    return NextResponse.redirect(new URL('/auth/login', request.url));
-  }
-
   return NextResponse.next();
 }
 
