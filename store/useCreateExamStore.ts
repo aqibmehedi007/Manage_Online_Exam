@@ -27,6 +27,7 @@ interface CreateExamState {
   addQuestion: () => void;
   updateQuestion: (id: string, updates: Partial<Question>) => void;
   removeQuestion: (id: string) => void;
+  setQuestions: (questions: Question[]) => void;
   reset: () => void;
 }
 
@@ -70,6 +71,8 @@ export const useCreateExamStore = create<CreateExamState>((set) => ({
   removeQuestion: (id) => set((state) => ({
     questions: state.questions.filter((q) => q.id !== id),
   })),
+
+  setQuestions: (questions) => set({ questions }),
 
   reset: () => set({
     step: 1,
