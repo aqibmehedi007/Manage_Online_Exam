@@ -25,6 +25,20 @@ async function main() {
 
   // 3. Insert Users
   const userMap = new Map();
+  
+  // Create Super Admin
+  const adminPassword = await bcrypt.hash('password123', 10);
+  const superAdmin = await prisma.user.create({
+    data: {
+      name: 'Super Admin',
+      email: 'superadmin@akij.work',
+      password: adminPassword,
+      role: 'ADMIN',
+      gender: 'MALE'
+    }
+  });
+  console.log('👑 Super Admin inserted.');
+
   for (const u of usersData) {
     const hashedPassword = await bcrypt.hash(u.password, 10);
     const createdUser = await prisma.user.create({

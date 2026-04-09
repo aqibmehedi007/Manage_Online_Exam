@@ -35,7 +35,9 @@ export default function LoginPage() {
         throw new Error(data.error || 'Login failed');
       }
 
-      if (data.role === 'EMPLOYER') {
+      if (data.role === 'ADMIN') {
+        router.push('/admin/dashboard');
+      } else if (data.role === 'EMPLOYER') {
         router.push('/employer');
       } else {
         router.push('/candidate');
