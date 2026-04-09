@@ -1,69 +1,71 @@
 # Online Assessment Platform
 
-A robust, full-stack Online Assessment Platform built with Next.js 15, Tailwind CSS, Prisma, and MySQL.
+A production-ready Online Assessment Platform built with Next.js 16 (App Router), Tailwind CSS 4, Prisma (MySQL), and Zustand. This project features high-fidelity UI alignment with Figma designs, a robust exam engine, and proctoring capabilities.
 
-## 🚀 Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites
-- Laragon (or any MySQL environment)
-- Node.js 18+
-- npm
+- Node.js 20+
+- MySQL (e.g., via Laragon or Docker)
 
-### 1. Database Setup
-1. Open Laragon and ensure MySQL is running.
-2. Create a database named `exam`.
-3. Update the `DATABASE_URL` in `.env`:
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
    ```
-   DATABASE_URL="mysql://root:@localhost:3306/exam"
+3. Set up environment variables:
+   Create a `.env` file with your database connection:
+   ```env
+   DATABASE_URL="mysql://root:@localhost:3306/online_exam"
+   ```
+4. Set up the database:
+   ```bash
+   npx prisma db push
+   ```
+5. Seed the database with Bangladeshi demo data:
+   ```bash
+   npm run seed
+   ```
+6. Run the development server:
+   ```bash
+   npm run dev
    ```
 
-### 2. Installation
-```bash
-npm install
-```
-
-### 3. Database Migration & Seeding
-```bash
-npx prisma migrate dev --name init
-node prisma/seed.js
-```
-
-### 4. Run Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) to view the application.
-
----
-
-## 🔑 Demo Credentials
-
-| Role | Email | Password |
-|------|-------|----------|
-| Employer | employer@example.com | password123 |
-| Candidate | candidate@example.com | password123 |
+### 🔑 Test Accounts
+- **Employer**: `employer@akij.work` / `password123`
+- **Candidate**: `candidate@akij.work` / `password123`
+*(Additional Bangladeshi test accounts are available in the system after seeding)*
 
 ---
 
 ## 📝 Additional Questions
 
-### MCP Integration
-**Idea**: Using a **Figma MCP** could significantly speed up the workflow by automatically exporting design tokens (colors, spacing, typography) from the design file directly into `tailwind.config.ts`. Additionally, a **Database MCP** (e.g., Supabase or Prisma MCP) could allow for natural language database management, such as "List all candidates who scored above 80%" or "Add a negative marking column to the Exam table".
+### 1. Model Context Protocol (MCP) Integration
+**Question**: Have you worked with any MCP? If no, describe how it could be used in this project.
+**Answer**: While I am familiar with the concepts of Model Context Protocol (MCP), a great way to use it in this project would be through a **Figma MCP**. This would allow an AI agent to directly read the design specs, spacing, and color tokens from Figma, making the UI development process significantly more accurate and faster by bridging the gap between design and code context. Additionally, a **Database MCP** (like Supabase or Prisma MCP) could allow for automated schema discovery and migration assistance during development.
 
-### AI Tools for Development
-During development, I utilized **Claude 3.5 Sonnet** within an agentic coding environment to architect the complex multi-step forms and proctoring logic. I also recommend **GitHub Copilot** for faster boilerplate generation and **v0.dev** for rapid UI component iteration matching the "billion-dollar" aesthetic requirements.
+### 2. AI Tools for Development
+**Question**: Which AI tools or processes have you used or recommend to speed up frontend development?
+**Answer**: 
+- **Claude / Gemini**: Used for architectural planning and complex logic generation.
+- **GitHub Copilot**: Essential for boilerplate generation and repetitive component structures.
+- **Tailwind DevTools/Extensions**: To quickly debug and verify styling against designs.
+- **v0.dev / Screenshot-to-Code**: Excellent for rapidly prototyping initial layouts from Figma screenshots before manual refinement.
 
-### Offline Mode Handling
-To handle internet loss during an exam:
-1. **Local Hardening**: All candidate selections are saved to `LocalStorage` immediately upon clicking an option.
-2. **Service Workers**: Use a PWA approach to cache the exam interface and questions, ensuring the app stays "alive" even when offline.
-3. **Background Sync**: Implement a retry mechanism using the Background Sync API (via Service Workers) to automatically retry failed submissions once a stable connection is redetected.
-4. **Local Timer**: The countdown timer runs locally (synced with the server start time) so it remains accurate regardless of connectivity.
+### 3. Handling Offline Mode
+**Question**: How would you handle offline mode if a candidate loses internet during an exam?
+**Answer**:
+In this project, I have implemented **localStorage synchronization**. 
+- **State Persistence**: Every answer choice selected by the candidate is immediately synced to the browser's `localStorage`.
+- **Resilience**: If the candidate accidentally refreshes the page, their computer crashes, or they lose internet, their progress is recovered instantly from local storage upon reconnecting or reloading.
+- **Background Sync**: For a production environment, I would use **Service Workers** and a **Background Sync API** to queue the submission attempts. Once the connection is restored, the browser would automatically push the "pending" answers to the server without the user needing to take any action.
 
 ---
 
-## 📦 Deliverables
-- **GitHub Repository**: [Link to your repo]
-- **Live Demo**: [Link to live demo]
-- **Video Recording**: [Link to walkthrough video]
-- **Google Form Submission**: [https://forms.gle/JyLYNhdRYe3rjJJv8](https://forms.gle/JyLYNhdRYe3rjJJv8)
+## ✨ Key Features
+- **Design-Exact UI**: Pixel-perfect alignment with provided Figma screens.
+- **Exam Engine**: Supports Radio, Checkbox, and Text question types with lettered options (A/B/C).
+- **Proctoring**: Real-time detection of tab switching and fullscreen exit with activity logging.
+- **Responsive Navigation**: Context-aware Navbar and Footer with secure sign-out confirmation.
+- **Bangladeshi Context**: Seeded with realistic Bangladeshi names, locations, and banking-domain questions.

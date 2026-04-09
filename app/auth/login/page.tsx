@@ -68,9 +68,9 @@ export default function LoginPage() {
             <form className="space-y-8" onSubmit={handleLogin}>
               <div className="space-y-6">
                 <Input
-                  label="Email/ User ID"
+                  label="Email"
                   type="email"
-                  placeholder="Enter your email/User ID"
+                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="h-12 border-gray-200 focus:border-primary rounded-xl"
@@ -110,7 +110,7 @@ export default function LoginPage() {
                 className="w-full h-14 rounded-xl text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20" 
                 isLoading={loading}
               >
-                Sign In
+                Submit
               </Button>
             </form>
           </div>

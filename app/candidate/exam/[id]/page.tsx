@@ -48,6 +48,19 @@ export default function ExamPage() {
           const qs = data.exam?.questions || data.questions || [];
           setQuestions(qs);
           setTimeLeft(((data.exam?.duration || data.duration) || 30) * 60);
+
+          // Restore progress from localStorage
+          const savedProgress = localStorage.getItem(`exam_progress_${examId}`);
+          if (savedProgress) {
+            try {
+              const { answers: savedAnswers, textAnswers: savedText, currentIdx: savedIdx } = JSON.parse(savedProgress);
+              if (savedAnswers) setAnswers(savedAnswers);
+              if (savedText) setTextAnswers(savedText);
+              if (savedIdx !== undefined) setCurrentIdx(savedIdx);
+            } catch (e) {
+              console.error('Failed to restore progress', e);
+            }
+          }
         }
       } catch (error) {
         console.error(error);
@@ -57,6 +70,14 @@ export default function ExamPage() {
     }
     fetchExam();
   }, [examId]);
+
+  // Persist progress to localStorage
+  useEffect(() => {
+    if (!loading && !submitted && !timedOut) {
+      const progress = JSON.stringify({ answers, textAnswers, currentIdx });
+      localStorage.setItem(`exam_progress_${examId}`, progress);
+    }
+  }, [answers, textAnswers, currentIdx, examId, loading, submitted, timedOut]);
 
   // Timer
   useEffect(() => {
@@ -95,9 +116,10 @@ export default function ExamPage() {
       await fetch(`/api/candidate/exams/${examId}/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ answers }),
+        body: JSON.stringify({ answers, textAnswers }),
       });
       setSubmitted(true);
+      localStorage.removeItem(`exam_progress_${examId}`);
     } catch {
       alert('Failed to submit');
     }
