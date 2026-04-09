@@ -46,22 +46,15 @@ export default function AdminDashboard() {
   const { metrics, activity, dbHealth } = data;
 
   return (
-    <div className="mx-auto max-w-[1440px] space-y-8 pb-20 p-8">
+    <div className="mx-auto max-w-[1440px] space-y-8 pb-20">
       {/* Admin Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-extra-bold text-[#1e293b] flex items-center gap-3">
-            <LayoutDashboard className="h-8 w-8 text-primary" />
+          <h1 className="text-2xl font-bold text-[#1e293b] flex items-center gap-3">
+            <LayoutDashboard className="h-7 w-7 text-primary" />
             System Control Center
           </h1>
-          <p className="text-gray-400 mt-2 font-medium">Real-time platform-wide monitoring and system health logs.</p>
-        </div>
-        <div className="hidden md:flex items-center gap-4 bg-white p-2 rounded-2xl border border-gray-100 shadow-sm">
-           <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold">SA</div>
-           <div className="pr-4">
-             <p className="text-sm font-bold text-[#1e293b]">Super Admin</p>
-             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">System God Mode</p>
-           </div>
+          <p className="text-gray-400 mt-1 text-sm font-medium">Real-time platform-wide monitoring and system health logs.</p>
         </div>
       </div>
 
