@@ -94,7 +94,7 @@ export default function EmployerDashboard() {
               candidates={exam.totalCandidates || 0}
               questionSets={exam.questionCount || 0}
               slots={exam.totalSlots || 0}
-              onViewCandidates={() => window.location.href = '/employer/candidates'}
+              onViewCandidates={() => window.location.href = `/employer/exams/${exam.id}/candidates`}
               onEdit={() => window.location.href = `/employer/exams/${exam.id}/edit`}
             />
           ))}
