@@ -18,7 +18,7 @@ export async function GET() {
       }
     });
 
-    return NextResponse.json(exams.map(exam => ({
+    return NextResponse.json(exams.map((exam: any) => ({
       ...exam,
       questionCount: exam._count.questions
     })));

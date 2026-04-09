@@ -4,7 +4,7 @@ import { getSession } from '@/lib/auth';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getSession();
@@ -33,7 +33,7 @@ export async function POST(
 
     for (const q of exam.questions) {
       const candidateAnswer = answers[q.id] || [];
-      const correctOptionIds = q.options.filter(o => o.isCorrect).map(o => o.id);
+      const correctOptionIds = q.options.filter((o: any) => o.isCorrect).map((o: any) => o.id);
 
       if (q.type === 'RADIO') {
         if (candidateAnswer.length > 0) {

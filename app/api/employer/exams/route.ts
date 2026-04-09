@@ -23,7 +23,7 @@ export async function GET() {
     });
 
     // Map the counts to the property names expected by the UI
-    const formattedExams = exams.map(exam => ({
+    const formattedExams = exams.map((exam: any) => ({
       ...exam,
       candidateCount: exam._count.submissions,
       questionCount: exam._count.questions,
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: any) => {
       const exam = await tx.exam.create({
         data: {
           title,

@@ -196,7 +196,7 @@ export default function CreateTestPage() {
                   </div>
                 ))}
               </div>
-              <Button onClick={handleSaveExam} loading={loading} className="w-full h-16 bg-primary text-white rounded-2xl text-xl font-bold shadow-xl shadow-primary/20">Finalize & Create Online Test</Button>
+              <Button onClick={handleSaveExam} isLoading={loading} className="w-full h-16 bg-primary text-white rounded-2xl text-xl font-bold shadow-xl shadow-primary/20">Finalize & Create Online Test</Button>
             </div>
           )}
         </div>
