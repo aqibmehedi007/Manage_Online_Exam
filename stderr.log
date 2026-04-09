@@ -1,0 +1,48 @@
+⨯ Error: Failed to load external module @prisma/client-2c3a283f134fdcb6: Error: Cannot find module '@prisma/client-2c3a283f134fdcb6'
+Require stack:
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/chunks/[root-of-the-server]__129v26y._.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/chunks/[turbopack]_runtime.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/app/api/admin/stats/route.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/require.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/next-server.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/next.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/app.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Context.externalRequire [as x] (.next/server/chunks/[turbopack]_runtime.js:624:15)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1017)
+    at instantiateModule (.next/server/chunks/[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (.next/server/chunks/[turbopack]_runtime.js:281:20)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1133)
+    at instantiateModule (.next/server/chunks/[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (.next/server/chunks/[turbopack]_runtime.js:281:20)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1490)
+Error: Server is not running.
+    at ignore-listed frames {
+  code: 'ERR_SERVER_NOT_RUNNING'
+}
+Error: Server is not running.
+    at ignore-listed frames {
+  code: 'ERR_SERVER_NOT_RUNNING'
+}
+⨯ Error: Failed to load external module @prisma/client-2c3a283f134fdcb6: Error: Cannot find module '@prisma/client-2c3a283f134fdcb6'
+Require stack:
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/chunks/[root-of-the-server]__129v26y._.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/chunks/[turbopack]_runtime.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/.next/server/app/api/admin/stats/route.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/require.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/next-server.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/node_modules/next/dist/server/next.js
+- /home/aqibmeh1/demoproject.aqibmehedi.com/app.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Context.externalRequire [as x] (.next/server/chunks/[turbopack]_runtime.js:624:15)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1017)
+    at instantiateModule (.next/server/chunks/[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (.next/server/chunks/[turbopack]_runtime.js:281:20)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1133)
+    at instantiateModule (.next/server/chunks/[turbopack]_runtime.js:853:9)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/[turbopack]_runtime.js:877:12)
+    at Context.esmImport [as i] (.next/server/chunks/[turbopack]_runtime.js:281:20)
+    at module evaluation (.next/server/chunks/[root-of-the-server]__129v26y._.js:1:1490)
