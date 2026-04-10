@@ -18,7 +18,6 @@ export default async function AdminLayout({
         userEmail={session?.email} 
         userName={user?.name || undefined} 
         userImage={user?.image}
-        pageTitle="System Control Center"
       />
       <main className="flex-1 flex flex-col pt-4">
         <div className="flex-1 px-8 pb-12">

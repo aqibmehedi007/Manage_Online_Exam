@@ -91,7 +91,7 @@ export default function EmployerDashboard() {
               key={exam.id}
               id={exam.id}
               title={exam.title}
-              candidates={exam.totalCandidates || 0}
+              candidates={exam.candidateCount || 0}
               questionSets={exam.questionCount || 0}
               slots={exam.totalSlots || 0}
               onViewCandidates={() => window.location.href = `/employer/exams/${exam.id}/candidates`}
@@ -107,6 +107,7 @@ export default function EmployerDashboard() {
               alt="No tests"
               fill
               className="object-contain"
+              sizes="96px"
             />
           </div>
           <h3 className="text-lg font-bold text-[#1e293b] mb-2">No Online Test Available</h3>

@@ -57,7 +57,7 @@ export default function Navbar({ userEmail, userName, userImage, pageTitle }: Na
               className="relative h-9 w-32 cursor-pointer shrink-0"
               onClick={() => (window.location.href = '/')}
             >
-              <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" />
+              <Image src="/logo-color.svg" alt="AKIJ Resource" fill className="object-contain object-left" priority />
             </div>
             <span className="text-sm font-medium text-[#475569]">{resolvedTitle}</span>
           </div>
@@ -69,7 +69,7 @@ export default function Navbar({ userEmail, userName, userImage, pageTitle }: Na
               className="flex items-center gap-3 cursor-pointer group"
             >
               <div className="relative h-9 w-9 overflow-hidden rounded-full bg-gray-100 border border-gray-100">
-                <Image src={userImage || "/avatar.png"} alt="Profile" fill className="object-cover" />
+                <Image src={userImage || "/avatar.png"} alt="Profile" fill className="object-cover" sizes="36px" />
               </div>
               <div className="hidden xl:block text-right">
                 <div className="flex items-center gap-1.5">

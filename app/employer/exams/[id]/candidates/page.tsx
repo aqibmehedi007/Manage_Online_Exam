@@ -12,6 +12,7 @@ import {
   Mail,
   User as UserIcon,
   ShieldAlert,
+  BarChart3, 
   ArrowRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -101,33 +102,33 @@ export default function ExamResultsPage() {
 
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5">
-          <div className="h-14 w-14 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:border-primary/20 transition-all">
+          <div className="h-14 w-14 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#2F308C]">
             <Users className="h-7 w-7" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-400">Total Candidates</p>
-            <h3 className="text-2xl font-bold text-[#1e293b]">{stats.total}</h3>
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Candidates</p>
+            <h3 className="text-2xl font-black text-[#1e293b]">{stats.total}</h3>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5">
-          <div className="h-14 w-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:border-primary/20 transition-all">
+          <div className="h-14 w-14 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#2F308C]">
             <CheckCircle2 className="h-7 w-7" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-400">Exams Completed</p>
-            <h3 className="text-2xl font-bold text-[#1e293b]">{stats.completed}</h3>
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Exams Completed</p>
+            <h3 className="text-2xl font-black text-[#1e293b]">{stats.completed}</h3>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5">
-          <div className="h-14 w-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600">
-            <AlertTriangle className="h-7 w-7" />
+        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:border-primary/20 transition-all">
+          <div className="h-14 w-14 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#2F308C]">
+            <BarChart3 className="h-7 w-7" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-400">Average Score</p>
-            <h3 className="text-2xl font-bold text-[#1e293b]">{stats.avgScore}%</h3>
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Average Score</p>
+            <h3 className="text-2xl font-black text-[#1e293b]">{stats.avgScore}%</h3>
           </div>
         </div>
       </div>

@@ -11,27 +11,319 @@
     "negativeMarking": 0.25,
     "questions": [
       {
-        "title": "What is the difference between useMemo and useCallback?",
+        "title": "What does the 'key' prop in React do?",
         "type": "RADIO",
         "options": [
           {
-            "text": "useMemo memoizes values, useCallback memoizes functions",
+            "text": "Helps React identify which items have changed",
             "isCorrect": true
           },
           {
-            "text": "useMemo is for components, useCallback is for hooks",
+            "text": "Sets the CSS ID of the element",
             "isCorrect": false
           },
           {
-            "text": "They are exactly same",
+            "text": "Is used for data binding",
             "isCorrect": false
           }
         ]
       },
       {
-        "title": "Explain React Server Components.",
+        "title": "Which hook would you use to perform a side effect in a functional component?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "useEffect",
+            "isCorrect": true
+          },
+          {
+            "text": "useState",
+            "isCorrect": false
+          },
+          {
+            "text": "useContext",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Explain the Virtual DOM and its benefits.",
         "type": "TEXT",
         "options": []
+      },
+      {
+        "title": "Which of these are CSS preprocessors?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Sass",
+            "isCorrect": true
+          },
+          {
+            "text": "Less",
+            "isCorrect": true
+          },
+          {
+            "text": "Redux",
+            "isCorrect": false
+          },
+          {
+            "text": "Stylus",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What does the 'key' prop in React do?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Helps React identify which items have changed",
+            "isCorrect": true
+          },
+          {
+            "text": "Sets the CSS ID of the element",
+            "isCorrect": false
+          },
+          {
+            "text": "Is used for data binding",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Which hook would you use to perform a side effect in a functional component?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "useEffect",
+            "isCorrect": true
+          },
+          {
+            "text": "useState",
+            "isCorrect": false
+          },
+          {
+            "text": "useContext",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Explain the Virtual DOM and its benefits.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which of these are CSS preprocessors?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Sass",
+            "isCorrect": true
+          },
+          {
+            "text": "Less",
+            "isCorrect": true
+          },
+          {
+            "text": "Redux",
+            "isCorrect": false
+          },
+          {
+            "text": "Stylus",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What does the 'key' prop in React do?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Helps React identify which items have changed",
+            "isCorrect": true
+          },
+          {
+            "text": "Sets the CSS ID of the element",
+            "isCorrect": false
+          },
+          {
+            "text": "Is used for data binding",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Which hook would you use to perform a side effect in a functional component?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "useEffect",
+            "isCorrect": true
+          },
+          {
+            "text": "useState",
+            "isCorrect": false
+          },
+          {
+            "text": "useContext",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Explain the Virtual DOM and its benefits.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which of these are CSS preprocessors?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Sass",
+            "isCorrect": true
+          },
+          {
+            "text": "Less",
+            "isCorrect": true
+          },
+          {
+            "text": "Redux",
+            "isCorrect": false
+          },
+          {
+            "text": "Stylus",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What does the 'key' prop in React do?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Helps React identify which items have changed",
+            "isCorrect": true
+          },
+          {
+            "text": "Sets the CSS ID of the element",
+            "isCorrect": false
+          },
+          {
+            "text": "Is used for data binding",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Which hook would you use to perform a side effect in a functional component?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "useEffect",
+            "isCorrect": true
+          },
+          {
+            "text": "useState",
+            "isCorrect": false
+          },
+          {
+            "text": "useContext",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Explain the Virtual DOM and its benefits.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which of these are CSS preprocessors?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Sass",
+            "isCorrect": true
+          },
+          {
+            "text": "Less",
+            "isCorrect": true
+          },
+          {
+            "text": "Redux",
+            "isCorrect": false
+          },
+          {
+            "text": "Stylus",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What does the 'key' prop in React do?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Helps React identify which items have changed",
+            "isCorrect": true
+          },
+          {
+            "text": "Sets the CSS ID of the element",
+            "isCorrect": false
+          },
+          {
+            "text": "Is used for data binding",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Which hook would you use to perform a side effect in a functional component?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "useEffect",
+            "isCorrect": true
+          },
+          {
+            "text": "useState",
+            "isCorrect": false
+          },
+          {
+            "text": "useContext",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Explain the Virtual DOM and its benefits.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which of these are CSS preprocessors?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Sass",
+            "isCorrect": true
+          },
+          {
+            "text": "Less",
+            "isCorrect": true
+          },
+          {
+            "text": "Redux",
+            "isCorrect": false
+          },
+          {
+            "text": "Stylus",
+            "isCorrect": true
+          }
+        ]
       }
     ]
   },
@@ -47,20 +339,227 @@
     "negativeMarking": 0.5,
     "questions": [
       {
-        "title": "Which protocol is used for gRPC?",
+        "title": "What is the purpose of middleware in Express.js?",
         "type": "RADIO",
         "options": [
           {
-            "text": "HTTP/1.1",
-            "isCorrect": false
-          },
-          {
-            "text": "HTTP/2",
+            "text": "To handle logic between request and response",
             "isCorrect": true
           },
           {
-            "text": "WebSockets",
+            "text": "To manage the frontend state",
             "isCorrect": false
+          },
+          {
+            "text": "To connect to the database directly",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Explain the difference between SQL and NoSQL databases.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which of these are characteristic of microservices?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Independent deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Single database shared by all services",
+            "isCorrect": false
+          },
+          {
+            "text": "Scalability per service",
+            "isCorrect": true
+          },
+          {
+            "text": "Loosely coupled",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What is the purpose of middleware in Express.js?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To handle logic between request and response",
+            "isCorrect": true
+          },
+          {
+            "text": "To manage the frontend state",
+            "isCorrect": false
+          },
+          {
+            "text": "To connect to the database directly",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Explain the difference between SQL and NoSQL databases.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which of these are characteristic of microservices?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Independent deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Single database shared by all services",
+            "isCorrect": false
+          },
+          {
+            "text": "Scalability per service",
+            "isCorrect": true
+          },
+          {
+            "text": "Loosely coupled",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What is the purpose of middleware in Express.js?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To handle logic between request and response",
+            "isCorrect": true
+          },
+          {
+            "text": "To manage the frontend state",
+            "isCorrect": false
+          },
+          {
+            "text": "To connect to the database directly",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Explain the difference between SQL and NoSQL databases.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which of these are characteristic of microservices?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Independent deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Single database shared by all services",
+            "isCorrect": false
+          },
+          {
+            "text": "Scalability per service",
+            "isCorrect": true
+          },
+          {
+            "text": "Loosely coupled",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What is the purpose of middleware in Express.js?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To handle logic between request and response",
+            "isCorrect": true
+          },
+          {
+            "text": "To manage the frontend state",
+            "isCorrect": false
+          },
+          {
+            "text": "To connect to the database directly",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Explain the difference between SQL and NoSQL databases.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which of these are characteristic of microservices?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Independent deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Single database shared by all services",
+            "isCorrect": false
+          },
+          {
+            "text": "Scalability per service",
+            "isCorrect": true
+          },
+          {
+            "text": "Loosely coupled",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What is the purpose of middleware in Express.js?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To handle logic between request and response",
+            "isCorrect": true
+          },
+          {
+            "text": "To manage the frontend state",
+            "isCorrect": false
+          },
+          {
+            "text": "To connect to the database directly",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Explain the difference between SQL and NoSQL databases.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which of these are characteristic of microservices?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Independent deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Single database shared by all services",
+            "isCorrect": false
+          },
+          {
+            "text": "Scalability per service",
+            "isCorrect": true
+          },
+          {
+            "text": "Loosely coupled",
+            "isCorrect": true
           }
         ]
       }
@@ -78,20 +577,227 @@
     "negativeMarking": 0.25,
     "questions": [
       {
-        "title": "Which of these are ensemble methods?",
-        "type": "CHECKBOX",
+        "title": "What is overfitting in Machine Learning?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which algorithm is commonly used for classification tasks?",
+        "type": "RADIO",
         "options": [
           {
-            "text": "Random Forest",
-            "isCorrect": true
+            "text": "K-Means Clustering",
+            "isCorrect": false
           },
           {
-            "text": "XGBoost",
+            "text": "Logistic Regression",
             "isCorrect": true
           },
           {
             "text": "Linear Regression",
             "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Which of these are libraries for data manipulation in Python?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Pandas",
+            "isCorrect": true
+          },
+          {
+            "text": "NumPy",
+            "isCorrect": true
+          },
+          {
+            "text": "Django",
+            "isCorrect": false
+          },
+          {
+            "text": "Matplotlib",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What is overfitting in Machine Learning?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which algorithm is commonly used for classification tasks?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "K-Means Clustering",
+            "isCorrect": false
+          },
+          {
+            "text": "Logistic Regression",
+            "isCorrect": true
+          },
+          {
+            "text": "Linear Regression",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Which of these are libraries for data manipulation in Python?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Pandas",
+            "isCorrect": true
+          },
+          {
+            "text": "NumPy",
+            "isCorrect": true
+          },
+          {
+            "text": "Django",
+            "isCorrect": false
+          },
+          {
+            "text": "Matplotlib",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What is overfitting in Machine Learning?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which algorithm is commonly used for classification tasks?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "K-Means Clustering",
+            "isCorrect": false
+          },
+          {
+            "text": "Logistic Regression",
+            "isCorrect": true
+          },
+          {
+            "text": "Linear Regression",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Which of these are libraries for data manipulation in Python?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Pandas",
+            "isCorrect": true
+          },
+          {
+            "text": "NumPy",
+            "isCorrect": true
+          },
+          {
+            "text": "Django",
+            "isCorrect": false
+          },
+          {
+            "text": "Matplotlib",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What is overfitting in Machine Learning?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which algorithm is commonly used for classification tasks?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "K-Means Clustering",
+            "isCorrect": false
+          },
+          {
+            "text": "Logistic Regression",
+            "isCorrect": true
+          },
+          {
+            "text": "Linear Regression",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Which of these are libraries for data manipulation in Python?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Pandas",
+            "isCorrect": true
+          },
+          {
+            "text": "NumPy",
+            "isCorrect": true
+          },
+          {
+            "text": "Django",
+            "isCorrect": false
+          },
+          {
+            "text": "Matplotlib",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What is overfitting in Machine Learning?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which algorithm is commonly used for classification tasks?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "K-Means Clustering",
+            "isCorrect": false
+          },
+          {
+            "text": "Logistic Regression",
+            "isCorrect": true
+          },
+          {
+            "text": "Linear Regression",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Which of these are libraries for data manipulation in Python?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Pandas",
+            "isCorrect": true
+          },
+          {
+            "text": "NumPy",
+            "isCorrect": true
+          },
+          {
+            "text": "Django",
+            "isCorrect": false
+          },
+          {
+            "text": "Matplotlib",
+            "isCorrect": true
           }
         ]
       }
@@ -109,9 +815,164 @@
     "negativeMarking": 0.0,
     "questions": [
       {
-        "title": "How do you handle conflict resolution between two team leads?",
+        "title": "What are the key components of a professional performance review?",
         "type": "TEXT",
         "options": []
+      },
+      {
+        "title": "Explain 'unconscious bias' in recruitment.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which of these are effective ways to improve employee retention?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Competitive salary",
+            "isCorrect": true
+          },
+          {
+            "text": "Poor communication",
+            "isCorrect": false
+          },
+          {
+            "text": "Career growth opportunities",
+            "isCorrect": true
+          },
+          {
+            "text": "Flexible working hours",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What are the key components of a professional performance review?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Explain 'unconscious bias' in recruitment.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which of these are effective ways to improve employee retention?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Competitive salary",
+            "isCorrect": true
+          },
+          {
+            "text": "Poor communication",
+            "isCorrect": false
+          },
+          {
+            "text": "Career growth opportunities",
+            "isCorrect": true
+          },
+          {
+            "text": "Flexible working hours",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What are the key components of a professional performance review?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Explain 'unconscious bias' in recruitment.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which of these are effective ways to improve employee retention?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Competitive salary",
+            "isCorrect": true
+          },
+          {
+            "text": "Poor communication",
+            "isCorrect": false
+          },
+          {
+            "text": "Career growth opportunities",
+            "isCorrect": true
+          },
+          {
+            "text": "Flexible working hours",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What are the key components of a professional performance review?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Explain 'unconscious bias' in recruitment.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which of these are effective ways to improve employee retention?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Competitive salary",
+            "isCorrect": true
+          },
+          {
+            "text": "Poor communication",
+            "isCorrect": false
+          },
+          {
+            "text": "Career growth opportunities",
+            "isCorrect": true
+          },
+          {
+            "text": "Flexible working hours",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What are the key components of a professional performance review?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Explain 'unconscious bias' in recruitment.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which of these are effective ways to improve employee retention?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Competitive salary",
+            "isCorrect": true
+          },
+          {
+            "text": "Poor communication",
+            "isCorrect": false
+          },
+          {
+            "text": "Career growth opportunities",
+            "isCorrect": true
+          },
+          {
+            "text": "Flexible working hours",
+            "isCorrect": true
+          }
+        ]
       }
     ]
   },
@@ -127,20 +988,227 @@
     "negativeMarking": 1.0,
     "questions": [
       {
-        "title": "What does a 403 Forbidden error mean?",
+        "title": "What is a SQL Injection attack?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "What is the difference between Symmetric and Asymmetric encryption?",
         "type": "RADIO",
         "options": [
           {
-            "text": "Resource not found",
-            "isCorrect": false
-          },
-          {
-            "text": "Authentication successful but access denied",
+            "text": "Symmetric uses one key, Asymmetric uses two",
             "isCorrect": true
           },
           {
-            "text": "Server error",
+            "text": "Asymmetric is faster than Symmetric",
             "isCorrect": false
+          },
+          {
+            "text": "Symmetric is purely for web traffic",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Which of these are common security protocols?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "HTTPS",
+            "isCorrect": true
+          },
+          {
+            "text": "SSH",
+            "isCorrect": true
+          },
+          {
+            "text": "Telnet",
+            "isCorrect": false
+          },
+          {
+            "text": "TLS",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What is a SQL Injection attack?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] What is the difference between Symmetric and Asymmetric encryption?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Symmetric uses one key, Asymmetric uses two",
+            "isCorrect": true
+          },
+          {
+            "text": "Asymmetric is faster than Symmetric",
+            "isCorrect": false
+          },
+          {
+            "text": "Symmetric is purely for web traffic",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Which of these are common security protocols?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "HTTPS",
+            "isCorrect": true
+          },
+          {
+            "text": "SSH",
+            "isCorrect": true
+          },
+          {
+            "text": "Telnet",
+            "isCorrect": false
+          },
+          {
+            "text": "TLS",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What is a SQL Injection attack?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] What is the difference between Symmetric and Asymmetric encryption?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Symmetric uses one key, Asymmetric uses two",
+            "isCorrect": true
+          },
+          {
+            "text": "Asymmetric is faster than Symmetric",
+            "isCorrect": false
+          },
+          {
+            "text": "Symmetric is purely for web traffic",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Which of these are common security protocols?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "HTTPS",
+            "isCorrect": true
+          },
+          {
+            "text": "SSH",
+            "isCorrect": true
+          },
+          {
+            "text": "Telnet",
+            "isCorrect": false
+          },
+          {
+            "text": "TLS",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What is a SQL Injection attack?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] What is the difference between Symmetric and Asymmetric encryption?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Symmetric uses one key, Asymmetric uses two",
+            "isCorrect": true
+          },
+          {
+            "text": "Asymmetric is faster than Symmetric",
+            "isCorrect": false
+          },
+          {
+            "text": "Symmetric is purely for web traffic",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Which of these are common security protocols?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "HTTPS",
+            "isCorrect": true
+          },
+          {
+            "text": "SSH",
+            "isCorrect": true
+          },
+          {
+            "text": "Telnet",
+            "isCorrect": false
+          },
+          {
+            "text": "TLS",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What is a SQL Injection attack?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] What is the difference between Symmetric and Asymmetric encryption?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Symmetric uses one key, Asymmetric uses two",
+            "isCorrect": true
+          },
+          {
+            "text": "Asymmetric is faster than Symmetric",
+            "isCorrect": false
+          },
+          {
+            "text": "Symmetric is purely for web traffic",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Which of these are common security protocols?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "HTTPS",
+            "isCorrect": true
+          },
+          {
+            "text": "SSH",
+            "isCorrect": true
+          },
+          {
+            "text": "Telnet",
+            "isCorrect": false
+          },
+          {
+            "text": "TLS",
+            "isCorrect": true
           }
         ]
       }
@@ -158,20 +1226,227 @@
     "negativeMarking": 0.25,
     "questions": [
       {
-        "title": "What is the primary goal of SEO?",
+        "title": "What is the primary purpose of a 'Call to Action' (CTA)?",
         "type": "RADIO",
         "options": [
           {
-            "text": "Increasing organic search visibility",
+            "text": "To encourage the user to take a specific action",
             "isCorrect": true
           },
           {
-            "text": "Running paid ads",
+            "text": "To explain the company history",
             "isCorrect": false
           },
           {
-            "text": "Designing logos",
+            "text": "To display the brand logo",
             "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Explain the concept of 'Conversion Rate Optimization' (CRO).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which platforms are effective for B2B digital marketing?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "LinkedIn",
+            "isCorrect": true
+          },
+          {
+            "text": "TikTok",
+            "isCorrect": false
+          },
+          {
+            "text": "Google Search Ads",
+            "isCorrect": true
+          },
+          {
+            "text": "Email Marketing",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What is the primary purpose of a 'Call to Action' (CTA)?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To encourage the user to take a specific action",
+            "isCorrect": true
+          },
+          {
+            "text": "To explain the company history",
+            "isCorrect": false
+          },
+          {
+            "text": "To display the brand logo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Explain the concept of 'Conversion Rate Optimization' (CRO).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which platforms are effective for B2B digital marketing?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "LinkedIn",
+            "isCorrect": true
+          },
+          {
+            "text": "TikTok",
+            "isCorrect": false
+          },
+          {
+            "text": "Google Search Ads",
+            "isCorrect": true
+          },
+          {
+            "text": "Email Marketing",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What is the primary purpose of a 'Call to Action' (CTA)?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To encourage the user to take a specific action",
+            "isCorrect": true
+          },
+          {
+            "text": "To explain the company history",
+            "isCorrect": false
+          },
+          {
+            "text": "To display the brand logo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Explain the concept of 'Conversion Rate Optimization' (CRO).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which platforms are effective for B2B digital marketing?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "LinkedIn",
+            "isCorrect": true
+          },
+          {
+            "text": "TikTok",
+            "isCorrect": false
+          },
+          {
+            "text": "Google Search Ads",
+            "isCorrect": true
+          },
+          {
+            "text": "Email Marketing",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What is the primary purpose of a 'Call to Action' (CTA)?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To encourage the user to take a specific action",
+            "isCorrect": true
+          },
+          {
+            "text": "To explain the company history",
+            "isCorrect": false
+          },
+          {
+            "text": "To display the brand logo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Explain the concept of 'Conversion Rate Optimization' (CRO).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which platforms are effective for B2B digital marketing?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "LinkedIn",
+            "isCorrect": true
+          },
+          {
+            "text": "TikTok",
+            "isCorrect": false
+          },
+          {
+            "text": "Google Search Ads",
+            "isCorrect": true
+          },
+          {
+            "text": "Email Marketing",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What is the primary purpose of a 'Call to Action' (CTA)?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To encourage the user to take a specific action",
+            "isCorrect": true
+          },
+          {
+            "text": "To explain the company history",
+            "isCorrect": false
+          },
+          {
+            "text": "To display the brand logo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Explain the concept of 'Conversion Rate Optimization' (CRO).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which platforms are effective for B2B digital marketing?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "LinkedIn",
+            "isCorrect": true
+          },
+          {
+            "text": "TikTok",
+            "isCorrect": false
+          },
+          {
+            "text": "Google Search Ads",
+            "isCorrect": true
+          },
+          {
+            "text": "Email Marketing",
+            "isCorrect": true
           }
         ]
       }
@@ -189,19 +1464,206 @@
     "negativeMarking": 0.5,
     "questions": [
       {
-        "title": "Which statement shows a company's financial position at a point in time?",
+        "title": "What is the 'Quick Ratio' in accounting?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which document is essential for tracking a company's liquidity?",
         "type": "RADIO",
         "options": [
           {
-            "text": "Income Statement",
+            "text": "Balance Sheet",
             "isCorrect": false
           },
           {
-            "text": "Balance Sheet",
+            "text": "Cash Flow Statement",
             "isCorrect": true
           },
           {
+            "text": "Income Statement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "State the basic accounting equation.",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Assets = Liabilities + Equity",
+            "isCorrect": true
+          },
+          {
+            "text": "Income = Revenue - Expenses",
+            "isCorrect": false
+          },
+          {
+            "text": "Assets = Liabilities - Equity",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] What is the 'Quick Ratio' in accounting?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which document is essential for tracking a company's liquidity?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Balance Sheet",
+            "isCorrect": false
+          },
+          {
             "text": "Cash Flow Statement",
+            "isCorrect": true
+          },
+          {
+            "text": "Income Statement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] State the basic accounting equation.",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Assets = Liabilities + Equity",
+            "isCorrect": true
+          },
+          {
+            "text": "Income = Revenue - Expenses",
+            "isCorrect": false
+          },
+          {
+            "text": "Assets = Liabilities - Equity",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] What is the 'Quick Ratio' in accounting?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which document is essential for tracking a company's liquidity?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Balance Sheet",
+            "isCorrect": false
+          },
+          {
+            "text": "Cash Flow Statement",
+            "isCorrect": true
+          },
+          {
+            "text": "Income Statement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] State the basic accounting equation.",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Assets = Liabilities + Equity",
+            "isCorrect": true
+          },
+          {
+            "text": "Income = Revenue - Expenses",
+            "isCorrect": false
+          },
+          {
+            "text": "Assets = Liabilities - Equity",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] What is the 'Quick Ratio' in accounting?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which document is essential for tracking a company's liquidity?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Balance Sheet",
+            "isCorrect": false
+          },
+          {
+            "text": "Cash Flow Statement",
+            "isCorrect": true
+          },
+          {
+            "text": "Income Statement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] State the basic accounting equation.",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Assets = Liabilities + Equity",
+            "isCorrect": true
+          },
+          {
+            "text": "Income = Revenue - Expenses",
+            "isCorrect": false
+          },
+          {
+            "text": "Assets = Liabilities - Equity",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] What is the 'Quick Ratio' in accounting?",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which document is essential for tracking a company's liquidity?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Balance Sheet",
+            "isCorrect": false
+          },
+          {
+            "text": "Cash Flow Statement",
+            "isCorrect": true
+          },
+          {
+            "text": "Income Statement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] State the basic accounting equation.",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Assets = Liabilities + Equity",
+            "isCorrect": true
+          },
+          {
+            "text": "Income = Revenue - Expenses",
+            "isCorrect": false
+          },
+          {
+            "text": "Assets = Liabilities - Equity",
             "isCorrect": false
           }
         ]
@@ -220,20 +1682,227 @@
     "negativeMarking": 0.25,
     "questions": [
       {
-        "title": "What is a characteristic of a Scrum Master?",
+        "title": "Describe the core principles of the Agile manifesto.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "What is the 'Critical Path' in project management?",
         "type": "RADIO",
         "options": [
           {
-            "text": "Direct manager of developers",
-            "isCorrect": false
-          },
-          {
-            "text": "Servant leader",
+            "text": "The longest sequence of dependent tasks",
             "isCorrect": true
           },
           {
-            "text": "Final decision maker for product vision",
+            "text": "The shortest path to project completion",
             "isCorrect": false
+          },
+          {
+            "text": "The list of all low-priority tasks",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Which of these are Agile methodologies?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "text": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "text": "Waterfall",
+            "isCorrect": false
+          },
+          {
+            "text": "Lean",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] Describe the core principles of the Agile manifesto.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] What is the 'Critical Path' in project management?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "The longest sequence of dependent tasks",
+            "isCorrect": true
+          },
+          {
+            "text": "The shortest path to project completion",
+            "isCorrect": false
+          },
+          {
+            "text": "The list of all low-priority tasks",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Which of these are Agile methodologies?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "text": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "text": "Waterfall",
+            "isCorrect": false
+          },
+          {
+            "text": "Lean",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] Describe the core principles of the Agile manifesto.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] What is the 'Critical Path' in project management?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "The longest sequence of dependent tasks",
+            "isCorrect": true
+          },
+          {
+            "text": "The shortest path to project completion",
+            "isCorrect": false
+          },
+          {
+            "text": "The list of all low-priority tasks",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Which of these are Agile methodologies?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "text": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "text": "Waterfall",
+            "isCorrect": false
+          },
+          {
+            "text": "Lean",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] Describe the core principles of the Agile manifesto.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] What is the 'Critical Path' in project management?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "The longest sequence of dependent tasks",
+            "isCorrect": true
+          },
+          {
+            "text": "The shortest path to project completion",
+            "isCorrect": false
+          },
+          {
+            "text": "The list of all low-priority tasks",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Which of these are Agile methodologies?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "text": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "text": "Waterfall",
+            "isCorrect": false
+          },
+          {
+            "text": "Lean",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] Describe the core principles of the Agile manifesto.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] What is the 'Critical Path' in project management?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "The longest sequence of dependent tasks",
+            "isCorrect": true
+          },
+          {
+            "text": "The shortest path to project completion",
+            "isCorrect": false
+          },
+          {
+            "text": "The list of all low-priority tasks",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Which of these are Agile methodologies?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "text": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "text": "Waterfall",
+            "isCorrect": false
+          },
+          {
+            "text": "Lean",
+            "isCorrect": true
           }
         ]
       }
@@ -251,20 +1920,227 @@
     "negativeMarking": 0.5,
     "questions": [
       {
-        "title": "Which of these are container orchestration tools?",
+        "title": "What does CI/CD stand for?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Continuous Integration / Continuous Deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Cloud Integration / Computing Device",
+            "isCorrect": false
+          },
+          {
+            "text": "Code Inspection / Constant Debugging",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Explain Infrastructure as Code (IaC).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "Which of these are common DevOps tools?",
         "type": "CHECKBOX",
         "options": [
           {
-            "text": "Kubernetes",
+            "text": "Jenkins",
             "isCorrect": true
           },
           {
-            "text": "Docker Swarm",
+            "text": "Terraform",
             "isCorrect": true
           },
           {
-            "text": "VirtualBox",
+            "text": "Photoshop",
             "isCorrect": false
+          },
+          {
+            "text": "Docker",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[2] What does CI/CD stand for?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Continuous Integration / Continuous Deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Cloud Integration / Computing Device",
+            "isCorrect": false
+          },
+          {
+            "text": "Code Inspection / Constant Debugging",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Explain Infrastructure as Code (IaC).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] Which of these are common DevOps tools?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Jenkins",
+            "isCorrect": true
+          },
+          {
+            "text": "Terraform",
+            "isCorrect": true
+          },
+          {
+            "text": "Photoshop",
+            "isCorrect": false
+          },
+          {
+            "text": "Docker",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[3] What does CI/CD stand for?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Continuous Integration / Continuous Deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Cloud Integration / Computing Device",
+            "isCorrect": false
+          },
+          {
+            "text": "Code Inspection / Constant Debugging",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Explain Infrastructure as Code (IaC).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] Which of these are common DevOps tools?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Jenkins",
+            "isCorrect": true
+          },
+          {
+            "text": "Terraform",
+            "isCorrect": true
+          },
+          {
+            "text": "Photoshop",
+            "isCorrect": false
+          },
+          {
+            "text": "Docker",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[4] What does CI/CD stand for?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Continuous Integration / Continuous Deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Cloud Integration / Computing Device",
+            "isCorrect": false
+          },
+          {
+            "text": "Code Inspection / Constant Debugging",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Explain Infrastructure as Code (IaC).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] Which of these are common DevOps tools?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Jenkins",
+            "isCorrect": true
+          },
+          {
+            "text": "Terraform",
+            "isCorrect": true
+          },
+          {
+            "text": "Photoshop",
+            "isCorrect": false
+          },
+          {
+            "text": "Docker",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "title": "[5] What does CI/CD stand for?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "Continuous Integration / Continuous Deployment",
+            "isCorrect": true
+          },
+          {
+            "text": "Cloud Integration / Computing Device",
+            "isCorrect": false
+          },
+          {
+            "text": "Code Inspection / Constant Debugging",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Explain Infrastructure as Code (IaC).",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] Which of these are common DevOps tools?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Jenkins",
+            "isCorrect": true
+          },
+          {
+            "text": "Terraform",
+            "isCorrect": true
+          },
+          {
+            "text": "Photoshop",
+            "isCorrect": false
+          },
+          {
+            "text": "Docker",
+            "isCorrect": true
           }
         ]
       }
@@ -282,9 +2158,229 @@
     "negativeMarking": 0.0,
     "questions": [
       {
-        "title": "Write a compelling headline for a new organic coffee brand.",
+        "title": "Define 'Brand Voice' and why it matters.",
         "type": "TEXT",
         "options": []
+      },
+      {
+        "title": "What is the primary goal of Content Marketing?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To provide valuable content to attract and retain an audience",
+            "isCorrect": true
+          },
+          {
+            "text": "To sell products directly without information",
+            "isCorrect": false
+          },
+          {
+            "text": "To fill up empty space on a website",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "Which of these are metrics for evaluating content performance?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Page views",
+            "isCorrect": true
+          },
+          {
+            "text": "Bounce rate",
+            "isCorrect": true
+          },
+          {
+            "text": "Number of social shares",
+            "isCorrect": true
+          },
+          {
+            "text": "Hard drive space used",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Define 'Brand Voice' and why it matters.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[2] What is the primary goal of Content Marketing?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To provide valuable content to attract and retain an audience",
+            "isCorrect": true
+          },
+          {
+            "text": "To sell products directly without information",
+            "isCorrect": false
+          },
+          {
+            "text": "To fill up empty space on a website",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[2] Which of these are metrics for evaluating content performance?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Page views",
+            "isCorrect": true
+          },
+          {
+            "text": "Bounce rate",
+            "isCorrect": true
+          },
+          {
+            "text": "Number of social shares",
+            "isCorrect": true
+          },
+          {
+            "text": "Hard drive space used",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Define 'Brand Voice' and why it matters.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[3] What is the primary goal of Content Marketing?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To provide valuable content to attract and retain an audience",
+            "isCorrect": true
+          },
+          {
+            "text": "To sell products directly without information",
+            "isCorrect": false
+          },
+          {
+            "text": "To fill up empty space on a website",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[3] Which of these are metrics for evaluating content performance?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Page views",
+            "isCorrect": true
+          },
+          {
+            "text": "Bounce rate",
+            "isCorrect": true
+          },
+          {
+            "text": "Number of social shares",
+            "isCorrect": true
+          },
+          {
+            "text": "Hard drive space used",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Define 'Brand Voice' and why it matters.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[4] What is the primary goal of Content Marketing?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To provide valuable content to attract and retain an audience",
+            "isCorrect": true
+          },
+          {
+            "text": "To sell products directly without information",
+            "isCorrect": false
+          },
+          {
+            "text": "To fill up empty space on a website",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[4] Which of these are metrics for evaluating content performance?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Page views",
+            "isCorrect": true
+          },
+          {
+            "text": "Bounce rate",
+            "isCorrect": true
+          },
+          {
+            "text": "Number of social shares",
+            "isCorrect": true
+          },
+          {
+            "text": "Hard drive space used",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Define 'Brand Voice' and why it matters.",
+        "type": "TEXT",
+        "options": []
+      },
+      {
+        "title": "[5] What is the primary goal of Content Marketing?",
+        "type": "RADIO",
+        "options": [
+          {
+            "text": "To provide valuable content to attract and retain an audience",
+            "isCorrect": true
+          },
+          {
+            "text": "To sell products directly without information",
+            "isCorrect": false
+          },
+          {
+            "text": "To fill up empty space on a website",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "title": "[5] Which of these are metrics for evaluating content performance?",
+        "type": "CHECKBOX",
+        "options": [
+          {
+            "text": "Page views",
+            "isCorrect": true
+          },
+          {
+            "text": "Bounce rate",
+            "isCorrect": true
+          },
+          {
+            "text": "Number of social shares",
+            "isCorrect": true
+          },
+          {
+            "text": "Hard drive space used",
+            "isCorrect": false
+          }
+        ]
       }
     ]
   }
