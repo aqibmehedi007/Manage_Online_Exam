@@ -1,6 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
   "/api/admin/stats/route": "app/api/admin/stats/route.js",
   "/api/auth/login/route": "app/api/auth/login/route.js",
   "/api/auth/logout/route": "app/api/auth/logout/route.js",
@@ -11,14 +12,13 @@
   "/api/candidate/exams/[id]/submit/route": "app/api/candidate/exams/[id]/submit/route.js",
   "/api/candidate/exams/route": "app/api/candidate/exams/route.js",
   "/api/employer/candidates/route": "app/api/employer/candidates/route.js",
+  "/api/employer/exams/[id]/assign/route": "app/api/employer/exams/[id]/assign/route.js",
+  "/api/employer/exams/[id]/available-candidates/route": "app/api/employer/exams/[id]/available-candidates/route.js",
   "/api/employer/exams/[id]/route": "app/api/employer/exams/[id]/route.js",
   "/api/employer/exams/[id]/submissions/route": "app/api/employer/exams/[id]/submissions/route.js",
   "/api/employer/exams/route": "app/api/employer/exams/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/auth/login/page": "app/auth/login/page.js",
   "/auth/register/page": "app/auth/register/page.js",
-  "/page": "app/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
   "/candidate/exam/[id]/page": "app/candidate/exam/[id]/page.js",
   "/candidate/page": "app/candidate/page.js",
   "/candidate/results/[id]/page": "app/candidate/results/[id]/page.js",
@@ -26,5 +26,7 @@
   "/employer/create-test/page": "app/employer/create-test/page.js",
   "/employer/exams/[id]/candidates/page": "app/employer/exams/[id]/candidates/page.js",
   "/employer/exams/[id]/edit/page": "app/employer/exams/[id]/edit/page.js",
-  "/employer/page": "app/employer/page.js"
+  "/employer/page": "app/employer/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
 }

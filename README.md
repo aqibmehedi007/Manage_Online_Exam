@@ -39,8 +39,15 @@ A production-ready Online Assessment Platform built with Next.js 16 (App Router)
 ### 🔑 Test Accounts
 For a complete evaluation of the platform's multi-role architecture, use the following credentials:
 - **Super Admin**: `superadmin@akij.work` / `password123` (Full system monitor)
-- **Employer**: `employer@akij.work` / `password123` (Exam management)
+- **Employer**: `employer@akij.work` / `password123` (Exam management & talent acquisition)
 - **Candidate**: `candidate@akij.work` / `password123` (Main test session)
+
+### 🚢 Production Deployment (cPanel)
+This project includes a specialized build pipeline for cPanel/Node.js environments:
+1. Run the production build: `npm run build`
+2. Package for cPanel: `node build_cpanel.js`
+3. Upload the resulting `cpanel_deploy` folder to your server.
+*The script automatically handles Prisma engine pruning for Linux and resolves Turbopack hashed module errors.*
 
 ---
 
@@ -93,7 +100,13 @@ Unlike standard mock-ups, this platform uses a robust **Prisma + MySQL** backend
 - **Relational Integrity**: Complete enterprise-ready schema for Users, Exams, Questions, and Submissions.
 - **Complex Aggregations**: Backend-driven stats calculation for scores and platform-wide metrics.
 
-### 5. 🏗️ Advanced UI/UX Components
+### 5. 🎯 Candidate Assignment & Acquisition
+Employers can directly manage their talent pool from the results dashboard:
+- **Global Talent Search**: Real-time search of unassigned candidates across the platform.
+- **One-Click Assignment**: Instantly add new candidates to any assessment without leaving the management view.
+- **Live Sync**: Integrated backend logic ensures total candidate counters and availability status are always accurate.
+
+### 6. 🏗️ Advanced UI/UX Components
 - **Dynamic Pagination**: Custom "Items per page" logic and state-driven navigation for large datasets.
 - **Offline Resilience**: `localStorage` synchronization immediately saves candidate progress to prevent data loss.
 - **Visual Excellence**: Pixel-perfect alignment with Figma, featuring vibrant gradients, smooth transitions, and premium typography.

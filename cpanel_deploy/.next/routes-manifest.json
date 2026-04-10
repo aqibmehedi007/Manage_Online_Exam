@@ -63,6 +63,22 @@
       "namedRegex": "^/api/employer/exams/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/api/employer/exams/[id]/assign",
+      "regex": "^/api/employer/exams/([^/]+?)/assign(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/employer/exams/(?<nxtPid>[^/]+?)/assign(?:/)?$"
+    },
+    {
+      "page": "/api/employer/exams/[id]/available-candidates",
+      "regex": "^/api/employer/exams/([^/]+?)/available\\-candidates(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/employer/exams/(?<nxtPid>[^/]+?)/available\\-candidates(?:/)?$"
+    },
+    {
       "page": "/api/employer/exams/[id]/submissions",
       "regex": "^/api/employer/exams/([^/]+?)/submissions(?:/)?$",
       "routeKeys": {

@@ -1,6 +1,7 @@
 {
-  "/_not-found/page": "/_not-found",
   "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/dashboard/page": "/admin/dashboard",
   "/api/admin/stats/route": "/api/admin/stats",
   "/api/auth/login/route": "/api/auth/login",
   "/api/auth/logout/route": "/api/auth/logout",
@@ -11,14 +12,13 @@
   "/api/candidate/exams/[id]/submit/route": "/api/candidate/exams/[id]/submit",
   "/api/candidate/exams/route": "/api/candidate/exams",
   "/api/employer/candidates/route": "/api/employer/candidates",
+  "/api/employer/exams/[id]/assign/route": "/api/employer/exams/[id]/assign",
+  "/api/employer/exams/[id]/available-candidates/route": "/api/employer/exams/[id]/available-candidates",
   "/api/employer/exams/[id]/route": "/api/employer/exams/[id]",
   "/api/employer/exams/[id]/submissions/route": "/api/employer/exams/[id]/submissions",
   "/api/employer/exams/route": "/api/employer/exams",
-  "/favicon.ico/route": "/favicon.ico",
   "/auth/login/page": "/auth/login",
   "/auth/register/page": "/auth/register",
-  "/page": "/",
-  "/admin/dashboard/page": "/admin/dashboard",
   "/candidate/exam/[id]/page": "/candidate/exam/[id]",
   "/candidate/page": "/candidate",
   "/candidate/results/[id]/page": "/candidate/results/[id]",
@@ -26,5 +26,7 @@
   "/employer/create-test/page": "/employer/create-test",
   "/employer/exams/[id]/candidates/page": "/employer/exams/[id]/candidates",
   "/employer/exams/[id]/edit/page": "/employer/exams/[id]/edit",
-  "/employer/page": "/employer"
+  "/employer/page": "/employer",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/"
 }

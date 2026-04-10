@@ -1,7 +1,25 @@
-// --- cPanel Environment Injection ---
-if (!process.env.DATABASE_URL) {
-  process.env.DATABASE_URL = "mysql://aqibmeh1_demo:LUh!%247%5BLtu6)-Www@localhost:3306/aqibmeh1_demo";
-}
+
+// --- cPanel Optimized Injection ---
+
+// Redirect hashed Prisma client modules to the standard client
+const Module = require('module');
+const originalRequire = Module.prototype.require;
+const prismaHashes = ["2c3a283f134fdcb6"];
+
+Module.prototype.require = function() {
+  const arg = arguments[0];
+  if (typeof arg === 'string' && arg.includes('@prisma/client-')) {
+    const matchedHash = prismaHashes.find(h => arg.includes(h));
+    if (matchedHash) {
+      return originalRequire.apply(this, ['@prisma/client']);
+    }
+  }
+  return originalRequire.apply(this, arguments);
+};
+
+process.env.DATABASE_URL = "mysql://aqibmeh1_demo:LUh!%247%5BLtu6)-Www@localhost:3306/aqibmeh1_demo";
+process.env.NODE_ENV = "production";
+process.env.PRISMA_CLI_QUERY_ENGINE_TYPE = "library";
 // --- End Injection ---
 
 const path = require('path')
